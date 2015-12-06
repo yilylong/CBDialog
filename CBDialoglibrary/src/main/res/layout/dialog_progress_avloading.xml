@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <FrameLayout
+        android:id="@+id/error_frame"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="5dp"
+        android:visibility="gone" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/error_circle" />
+
+        <ImageView
+            android:id="@+id/error_x"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center"
+            android:src="@drawable/error_center_x" />
+    </FrameLayout>
+
+    <com.zhl.cbdialog.AVLoadingIndicatorView
+        android:id="@+id/progressAVloading"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:indicator="BallPulse"
+        app:indicator_color="@color/blue_btn_bg_color" />
+
+    <TextView
+        android:id="@+id/dialog_message"
+        style="@style/dialog_msg_style"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="loading..."
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/dialog_posi_btn"
+        style="@style/dialog_blue_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:text="确定"
+        android:visibility="gone" />
+
+</LinearLayout>

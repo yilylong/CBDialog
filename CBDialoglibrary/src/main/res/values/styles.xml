@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="alert_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@color/float_transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+    <!-- 对话框创建时需要加载的样式 -->
+    <style name="Dialog" parent="@android:style/Theme.Dialog">
+
+        <!-- 去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 去除背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
+    <!--
+    <style name="NotTitleDialog" parent="@android:style/Theme.Dialog">
+
+        去除标题
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    -->
+
+
+    <!-- 对话框动画样式 -->
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/modal_in</item>
+        <item name="android:windowExitAnimation">@anim/modal_out</item>
+    </style>
+
+    <!-- 对话框动画样式样式2 -->
+    <style name="DialogAnimationSlidTop">
+        <item name="android:windowEnterAnimation">@anim/dialog_slid_open_top</item>
+        <item name="android:windowExitAnimation">@anim/dialog_slid_close_top</item>
+    </style>
+    <!-- 对话框动画样式样式3 -->
+    <style name="DialogAnimationSlidBottom">
+        <item name="android:windowEnterAnimation">@anim/dialog_slid_open_bottom</item>
+        <item name="android:windowExitAnimation">@anim/dialog_slid_close_bottom</item>
+    </style>
+    <!-- 对话框动画样式样式4 -->
+    <style name="DialogAnimationSlidRight">
+        <item name="android:windowEnterAnimation">@anim/dialog_slid_open_right</item>
+        <item name="android:windowExitAnimation">@anim/dialog_slid_close_right</item>
+    </style>
+
+    <!-- 对话框确认或取消button样式 -->
+    <style name="dialog_blue_button" parent="android:Widget.Button">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/blue_button_background</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">21dp</item>
+        <item name="android:paddingRight">21dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="dialog_title_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">19sp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/dialog_title_text_color</item>
+        <item name="android:layout_marginTop">10dp</item>
+    </style>
+
+    <style name="dialog_msg_style">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/dialog_msg_text_color</item>
+        <item name="android:maxLines">4</item>
+    </style>
+
+</resources>

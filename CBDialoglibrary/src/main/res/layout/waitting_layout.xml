@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@drawable/bg_dhk"
+    android:padding="20dp"
+    android:orientation="vertical" >
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="15dp"
+        android:indeterminateDrawable="@drawable/progress_load"
+         />
+
+    <TextView
+        android:id="@+id/dialog_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这是一个进度对话框"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:textColor="@color/tip_textcolor" />
+
+</LinearLayout>
