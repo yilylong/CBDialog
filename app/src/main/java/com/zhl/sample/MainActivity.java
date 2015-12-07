@@ -130,6 +130,8 @@ public class MainActivity extends Activity implements OnClickListener {
 
                             }
                         })
+                        .setProgressIndicatorColor(0xaa198675)
+                        .setProgressIndicator(CBDialogBuilder.INDICATOR_BallRotate)
                         .create().show();
                 break;
 
