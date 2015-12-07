@@ -65,4 +65,9 @@ new CBDialogBuilder(this, CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC).create(
                             }
       })
       
+#####设置avloading进度框动画样式颜色
+
+    .setProgressIndicatorColor(0xaa198675)
+    .setProgressIndicator(CBDialogBuilder.INDICATOR_BallRotate)
+
 详情参考DEMO
