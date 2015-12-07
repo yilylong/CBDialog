@@ -7,6 +7,7 @@
 ![](https://raw.githubusercontent.com/yilylong/ImageResource/master/cbdialog_1.png)  
 ![](https://raw.githubusercontent.com/yilylong/ImageResource/master/cbdialog_2.png)  
 ![](https://raw.githubusercontent.com/yilylong/ImageResource/master/cbdialog_3.png)  
+![](https://raw.githubusercontent.com/yilylong/ImageResource/master/cbdialog_4.png)  
 
 ###How To Useage
 
