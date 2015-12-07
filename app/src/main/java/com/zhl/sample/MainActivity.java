@@ -51,6 +51,7 @@ public class MainActivity extends Activity implements OnClickListener {
                         .setConfirmButtonText("ok")
                         .setCancelButtonText("cancel")
                         .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM)
+                        .setDialoglocation(CBDialogBuilder.DIALOG_LOCATION_BOTTOM)
                         .setButtonClickListener(true, new CBDialogBuilder.onDialogbtnClickListener() {
                             @Override
                             public void onDialogbtnClick(Context context, Dialog dialog, int whichBtn) {
