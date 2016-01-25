@@ -323,13 +323,18 @@ public class CBDialogBuilder {
 	 * @return
 	 */
 	public Dialog create() {
-		confrimBtn = (Button) getView(R.id.dialog_posi_btn);
+		if(confrimBtn==null){
+			confrimBtn = (Button) getView(R.id.dialog_posi_btn);
+		}
+		
 		if(showConfirmBtn){
 			confrimBtn.setVisibility(View.VISIBLE);
 		}else{
 			confrimBtn.setVisibility(View.GONE);
 		}
-		cancleBtn = (Button) getView(R.id.dialog_neg_btn);
+		if(cancleBtn==null){
+			cancleBtn = (Button) getView(R.id.dialog_neg_btn);
+		}
 		// 判断是否需要创建取消按钮
 		if (confrimBtn != null && !showCancelButton
 				&& DIALOG_STYLE_CURRENT == DIALOG_STYLE_NORMAL) {
@@ -626,6 +631,26 @@ public class CBDialogBuilder {
 				}
 			}
 		});
+		return this;
+	}
+
+	public CBDialogBuilder setConfirmBtnDrawable(int resID){
+		if(confrimBtn==null){
+			confrimBtn = (Button) getView(R.id.dialog_posi_btn);
+		}
+		if(confrimBtn!=null&&resID!=-1){
+			confrimBtn.setBackgroundResource(resID);
+		}
+		return this;
+	}
+	
+	public CBDialogBuilder setCancelBtnDrawable(int resID){
+		if(cancleBtn==null){
+			cancleBtn = (Button) getView(R.id.dialog_neg_btn);
+		}
+		if(cancleBtn!=null&&resID!=-1){
+			cancleBtn.setBackgroundResource(resID);
+		}
 		return this;
 	}
 
