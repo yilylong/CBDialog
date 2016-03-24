@@ -281,7 +281,7 @@ public class CBDialogBuilder {
 		window.getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		int screenwidth = metrics.widthPixels;
 		int width = 0;
-		if (widthcoefficient > 0) {
+		if (widthcoefficient > 0&&widthcoefficient<1) {
 			width = (int) (screenwidth * widthcoefficient);
 		} else {
 			width = (int) (screenwidth * WIDTHFACTOR);
@@ -291,8 +291,8 @@ public class CBDialogBuilder {
 
 		// 设置透明
 		WindowManager.LayoutParams lp = window.getAttributes();
-		if (alpha > 0) {
-			lp.alpha = 1.0f;
+		if (alpha > 0&&alpha<=1) {
+			lp.alpha = alpha;
 		} else {
 			lp.alpha = ALPHAFACTOR;
 		}
