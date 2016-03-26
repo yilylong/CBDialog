@@ -28,9 +28,9 @@ import com.zhl.cbdialog.titanic.TitanicTextView;
 
 /**
  * 
- * ç±»åç§°ï¼šå¯¹è¯æ¡†å·¥å…·ç±» ç±»æè¿°ï¼šåˆ›å»ºå¯¹è¯æ¡†çš„å·¥å…·ç±»ï¼Œå¯ä»¥è®¾ç½®ä¸åŒæ ·å¼ï¼Œå’ŒåŠ¨ç”»é£æ ¼
+ * ÀàÃû³Æ£º¶Ô»°¿ò¹¤¾ßÀà ÀàÃèÊö£º´´½¨¶Ô»°¿òµÄ¹¤¾ßÀà£¬¿ÉÒÔÉèÖÃ²»Í¬ÑùÊ½£¬ºÍ¶¯»­·ç¸ñ
  * 
- * åˆ›å»ºäººï¼š ZhaoHaiLong åˆ›å»ºæ—¶é—´ï¼š2012-1-20 ä¸Šåˆ10:37:55
+ * ´´½¨ÈË£º ZhaoHaiLong ´´½¨Ê±¼ä£º2012-1-20 ÉÏÎç10:37:55
  * 
  *
  */
@@ -64,127 +64,127 @@ public class CBDialogBuilder {
     public static final int INDICATOR_BallGridBeat=26;
     public static final int INDICATOR_SemiCircleSpin=27;
 	/**
-	 * æ™®é€šå¯¹è¯æ¡†
+	 * ÆÕÍ¨¶Ô»°¿ò
 	 */
 	public static final int DIALOG_STYLE_NORMAL = R.layout.dialog;
 	/**
-	 * metrialè¿›åº¦æ¡é£æ ¼
+	 * metrial½ø¶ÈÌõ·ç¸ñ
 	 */
 	public static final int DIALOG_STYLE_PROGRESS = R.layout.dialog_progress;
 	/**
-	 * ä¸€ä¸ªæ–‡å­—æ°´å¹³ä¸Šå‡çš„åŠ¨ç”»é£æ ¼çš„è¿›åº¦æ¡†
+	 * Ò»¸öÎÄ×ÖË®Æ½ÉÏÉıµÄ¶¯»­·ç¸ñµÄ½ø¶È¿ò
 	 */
 	public static final int DIALOG_STYLE_PROGRESS_TITANIC = R.layout.dialog_progress_titanic;
 	/**
-	 * ä¸€ä¸ªè‡ªå®šä¹‰åŠ¨ç”»è¿›åº¦æ¡†
+	 * Ò»¸ö×Ô¶¨Òå¶¯»­½ø¶È¿ò
 	 */
 	public static final int DIALOG_STYLE_PROGRESS_AVLOADING = R.layout.dialog_progress_avloading;
 	/**
-	 * ç¼©æ”¾åŠ¨ç”»
+	 * Ëõ·Å¶¯»­
 	 */
 	public static final int DIALOG_ANIM_NORMAL = R.style.DialogAnimation;
 	/**
-	 * ä»ä¸‹å¾€ä¸Šæ»‘åŠ¨åŠ¨ç”»
+	 * ´ÓÏÂÍùÉÏ»¬¶¯¶¯»­
 	 */
 	public static final int DIALOG_ANIM_SLID_BOTTOM = R.style.DialogAnimationSlidBottom;
 	/**
-	 * ä»ä¸Šå¾€ä¸‹æ»‘åŠ¨åŠ¨ç”»
+	 * ´ÓÉÏÍùÏÂ»¬¶¯¶¯»­
 	 */
 	public static final int DIALOG_ANIM_SLID_TOP = R.style.DialogAnimationSlidTop;
 	/**
-	 * ä»å³å¾€å·¦æ»‘åŠ¨åŠ¨ç”»
+	 * ´ÓÓÒÍù×ó»¬¶¯¶¯»­
 	 */
 	public static final int DIALOG_ANIM_SLID_RIGHT = R.style.DialogAnimationSlidRight;
 	/**
-	 * å¯¹è¯æ¡†å®½åº¦æ‰€å å±å¹•å®½åº¦çš„æ¯”ä¾‹
+	 * ¶Ô»°¿ò¿í¶ÈËùÕ¼ÆÁÄ»¿í¶ÈµÄ±ÈÀı
 	 */
 	public static final float WIDTHFACTOR = 0.75f;
 	/**
-	 * å¯¹è¯æ¡†é€æ˜æ¯”ä¾‹
+	 * ¶Ô»°¿òÍ¸Ã÷±ÈÀı
 	 */
 	public static final float ALPHAFACTOR = 1.0f;
 	/**
-	 * å¯¹è¯æ¡†å¤„äºå±å¹•é¡¶éƒ¨ä½ç½®
+	 * ¶Ô»°¿ò´¦ÓÚÆÁÄ»¶¥²¿Î»ÖÃ
 	 */
 	public static final int DIALOG_LOCATION_TOP = 12;
 	/**
-	 * å¯¹è¯æ¡†å¤„äºå±å¹•ä¸­é—´ä½ç½®
+	 * ¶Ô»°¿ò´¦ÓÚÆÁÄ»ÖĞ¼äÎ»ÖÃ
 	 */
 	public static final int DIALOG_LOCATION_CENTER = 10;
 	/**
-	 * å¯¹è¯æ¡†å¤„äºå±å¹•åº•éƒ¨ä½ç½®
+	 * ¶Ô»°¿ò´¦ÓÚÆÁÄ»µ×²¿Î»ÖÃ
 	 */
 	public static final int DIALOG_LOCATION_BOTTOM = 11;
 	/**
-	 * æ¶ˆæ¯ä½äºå¯¹è¯æ¡†çš„ä½ç½® å±…å·¦
+	 * ÏûÏ¢Î»ÓÚ¶Ô»°¿òµÄÎ»ÖÃ ¾Ó×ó
 	 */
 	public static final int MSG_LAYOUT_LEFT = 1;
 	/**
-	 * æ¶ˆæ¯ä½äºå¯¹è¯æ¡†çš„ä½ç½® å±…ä¸­
+	 * ÏûÏ¢Î»ÓÚ¶Ô»°¿òµÄÎ»ÖÃ ¾ÓÖĞ
 	 */
 	public static final int MSG_LAYOUT_CENTER = 0;
 	/**
-	 * å½“å‰ä½¿ç”¨çš„é£æ ¼
+	 * µ±Ç°Ê¹ÓÃµÄ·ç¸ñ
 	 */
 	private int DIALOG_STYLE_CURRENT = DIALOG_STYLE_NORMAL;
 	/**
-	 * ä¸Šä¸‹æ–‡
+	 * ÉÏÏÂÎÄ
 	 */
 	private Context context;
 	/**
-	 * Dialogå¯¹è±¡
+	 * Dialog¶ÔÏó
 	 */
 	private Dialog dialog;
 	/**
-	 * å³è¾¹ï¼ˆç¡®å®šï¼‰æŒ‰é’®
+	 * ÓÒ±ß£¨È·¶¨£©°´Å¥
 	 */
 	private Button confrimBtn;
 	/**
-	 * å·¦è¾¹ï¼ˆå–æ¶ˆï¼‰æŒ‰é’®
+	 * ×ó±ß£¨È¡Ïû£©°´Å¥
 	 */
 	private Button cancleBtn;
 	/**
-	 * æ¶ˆæ¯æ¡†å¸ƒå±€
+	 * ÏûÏ¢¿ò²¼¾Ö
 	 */
 	ViewGroup msglayout;
 	/**
-	 * æ˜¯å¦æ˜¾ç¤ºcancelbutton;
+	 * ÊÇ·ñÏÔÊ¾cancelbutton;
 	 */
 	private boolean showCancelButton = false;
 	/**
-	 * æ˜¯å¦ç‚¹å‡»å¯¹è¯æ¡†å¤–é¢å–æ¶ˆå¯¹è¯æ¡†
+	 * ÊÇ·ñµã»÷¶Ô»°¿òÍâÃæÈ¡Ïû¶Ô»°¿ò
 	 */
 	private boolean touchOutSideCancel = false;
-	private String confirmBtnTX = "ç¡®å®š", cancleBtnTX = "å–æ¶ˆ";
+	private String confirmBtnTX = "È·¶¨", cancleBtnTX = "È¡Ïû";
 	private onDialogbtnClickListener btnClickListener;
 	/**
-	 * æ˜¯å¦æ˜¾ç¤ºé¡¶éƒ¨å›¾æ ‡
+	 * ÊÇ·ñÏÔÊ¾¶¥²¿Í¼±ê
 	 */
 	private boolean showTopIcon = true;
 	/**
-	 * è¿›åº¦æ¡†æ ·å¼ç”¨åˆ°çš„metrialé£æ ¼
+	 * ½ø¶È¿òÑùÊ½ÓÃµ½µÄmetrial·ç¸ñ
 	 */
 	private ProgressHelper mProgressHelper;
 	private TitanicTextView mTitanicTXview;
 	private Titanic titanic;
 	protected int count = -1;
 	/**
-	 * è¿›åº¦æ¡†è¶…æ—¶æ—¶é—´
+	 * ½ø¶È¿ò³¬Ê±Ê±¼ä
 	 */
 	private int outOfTime = 1000;
 	private onProgressOutTimeListener mProgressOutTimeListener;
 	private TextView dialogTitle, dialogMsg;
 	/**
-	 * æ˜¯å¦æ˜¾ç¤ºç¡®è®¤æŒ‰é’®
+	 * ÊÇ·ñÏÔÊ¾È·ÈÏ°´Å¥
 	 */
 	private boolean showConfirmBtn = true;
 	/**
-	 * è¿›åº¦æ¡
+	 * ½ø¶ÈÌõ
 	 */
 	private AVLoadingIndicatorView mAVIndicatorView;
 
 	/**
-	 * æ„é€ å™¨ä¸€ åˆ›å»ºä¸€ä¸ªåŸºæœ¬dialog
+	 * ¹¹ÔìÆ÷Ò» ´´½¨Ò»¸ö»ù±¾dialog
 	 * 
 	 * @param context
 	 */
@@ -192,27 +192,27 @@ public class CBDialogBuilder {
 		this(context, DIALOG_STYLE_NORMAL);
 	}
 
-	// é‡æ„æ„é€ å‡½æ•° æ–¹ä¾¿ç”¨æˆ·ä½¿ç”¨å†…éƒ¨ç±»ç›‘å¬å™¨æ—¶ä½¿ç”¨
+	// ÖØ¹¹¹¹Ôìº¯Êı ·½±ãÓÃ»§Ê¹ÓÃÄÚ²¿Àà¼àÌıÆ÷Ê±Ê¹ÓÃ
 	/**
-	 * æ„é€ å™¨äºŒ
+	 * ¹¹ÔìÆ÷¶ş
 	 * 
 	 * @param context
-	 *            ä¸Šä¸‹æ–‡
+	 *            ÉÏÏÂÎÄ
 	 * @param layoutStyle
-	 *            å¯¹è¯æ¡†é£æ ¼
+	 *            ¶Ô»°¿ò·ç¸ñ
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle) {
 		this(context, layoutStyle, false);
 	}
 
 	/**
-	 * æ„é€ å™¨ä¸‰
+	 * ¹¹ÔìÆ÷Èı
 	 * 
 	 * @param context
 	 * @param layoutStyle
-	 *            å¸ƒå±€æ ·å¼
+	 *            ²¼¾ÖÑùÊ½
 	 * @param isSystemAlert
-	 *            æ˜¯å¦æ˜¯ç³»ç»Ÿå¼¹æ¡†ï¼ˆserviceç­‰åœ°æ–¹ç”¨åˆ°ç³»ç»Ÿçº§åˆ«ä¸ä¾èµ–activityï¼‰
+	 *            ÊÇ·ñÊÇÏµÍ³µ¯¿ò£¨serviceµÈµØ·½ÓÃµ½ÏµÍ³¼¶±ğ²»ÒÀÀµactivity£©
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle,
 			boolean isSystemAlert) {
@@ -220,14 +220,14 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * æ„é€ å™¨å››
+	 * ¹¹ÔìÆ÷ËÄ
 	 * 
 	 * @param context
-	 *            ä¸Šä¸‹æ–‡
+	 *            ÉÏÏÂÎÄ
 	 * @param layoutStyle
-	 *            å¯¹è¯æ¡†å¸ƒå±€æ ·å¼
+	 *            ¶Ô»°¿ò²¼¾ÖÑùÊ½
 	 * @param widthcoefficient
-	 *            å¯¹è¯æ¡†å®½åº¦æ—¶å å±å¹•å®½åº¦çš„æ¯”é‡ï¼ˆ0-1ï¼‰
+	 *            ¶Ô»°¿ò¿í¶ÈÊ±Õ¼ÆÁÄ»¿í¶ÈµÄ±ÈÖØ£¨0-1£©
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle,
 			float widthcoefficient) {
@@ -235,16 +235,16 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * å¯¹è¯æ¡†ç”Ÿæˆå™¨äº”
+	 * ¶Ô»°¿òÉú³ÉÆ÷Îå
 	 * 
 	 * @param context
-	 *            ä¸Šä¸‹æ–‡
+	 *            ÉÏÏÂÎÄ
 	 * @param layoutStyle
-	 *            æ ·å¼
+	 *            ÑùÊ½
 	 * @param widthcoefficient
-	 *            å¯¹è¯æ¡†å®½åº¦æ‰€å å±å¹•å®½åº¦çš„æ¯”é‡ï¼ˆ0-1ï¼‰
+	 *            ¶Ô»°¿ò¿í¶ÈËùÕ¼ÆÁÄ»¿í¶ÈµÄ±ÈÖØ£¨0-1£©
 	 * @param alpha
-	 *            å¯¹è¯æ¡†é€æ˜åº¦
+	 *            ¶Ô»°¿òÍ¸Ã÷¶È
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle,
 			float widthcoefficient, float alpha) {
@@ -252,31 +252,31 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * æ„é€ å™¨
+	 * ¹¹ÔìÆ÷
 	 * 
 	 * @param context
 	 * @param layoutStyle
-	 *            å¸ƒå±€æ ·å¼
+	 *            ²¼¾ÖÑùÊ½
 	 * @param isSystemAlert
-	 *            æ˜¯å¦æ˜¯ç³»ç»Ÿå¼¹æ¡†ï¼ˆserviceç­‰åœ°æ–¹ç”¨åˆ°ç³»ç»Ÿçº§åˆ«ä¸ä¾èµ–activityï¼‰
+	 *            ÊÇ·ñÊÇÏµÍ³µ¯¿ò£¨serviceµÈµØ·½ÓÃµ½ÏµÍ³¼¶±ğ²»ÒÀÀµactivity£©
 	 * @param widthcoefficient
-	 *            å¯¹è¯æ¡†å®½åº¦æ‰€å å±å¹•å®½åº¦çš„æ¯”é‡ï¼ˆ0-1ï¼‰
+	 *            ¶Ô»°¿ò¿í¶ÈËùÕ¼ÆÁÄ»¿í¶ÈµÄ±ÈÖØ£¨0-1£©
 	 * @param alpha
-	 *            å¯¹è¯æ¡†é€æ˜åº¦
+	 *            ¶Ô»°¿òÍ¸Ã÷¶È
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle,
 			boolean isSystemAlert, float widthcoefficient, float alpha) {
 		this.DIALOG_STYLE_CURRENT = layoutStyle;
-		// theme è¦ä¼ å…¥ä¸€ä¸ªæ ·å¼å»æ‰ç³»ç»Ÿå¯¹è¯æ¡†çš„æ ‡é¢˜
+		// theme Òª´«ÈëÒ»¸öÑùÊ½È¥µôÏµÍ³¶Ô»°¿òµÄ±êÌâ
 		Dialog dialog = new Dialog(context, R.style.Dialog);
-		// è®¾ç½®å¯¹è¯æ¡†é£æ ¼
+		// ÉèÖÃ¶Ô»°¿ò·ç¸ñ
 		dialog.setContentView(layoutStyle);
 		Window window = dialog.getWindow();
-		// æ˜¯å¦ç³»ç»Ÿçº§å¼¹æ¡†
+		// ÊÇ·ñÏµÍ³¼¶µ¯¿ò
 		if (isSystemAlert) {
 			window.setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 		}
-		// è·å–å±å¹•å®½åº¦
+		// »ñÈ¡ÆÁÄ»¿í¶È
 		DisplayMetrics metrics = new DisplayMetrics();
 		window.getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		int screenwidth = metrics.widthPixels;
@@ -286,10 +286,10 @@ public class CBDialogBuilder {
 		} else {
 			width = (int) (screenwidth * WIDTHFACTOR);
 		}
-		// è®¾ç½®å¯¹è¯æ¡†å®½åº¦
+		// ÉèÖÃ¶Ô»°¿ò¿í¶È
 		window.getAttributes().width = width;
 
-		// è®¾ç½®é€æ˜
+		// ÉèÖÃÍ¸Ã÷
 		WindowManager.LayoutParams lp = window.getAttributes();
 		if (alpha > 0&&alpha<=1) {
 			lp.alpha = alpha;
@@ -297,7 +297,7 @@ public class CBDialogBuilder {
 			lp.alpha = ALPHAFACTOR;
 		}
 		window.setAttributes(lp);
-		// è®¾ç½®åŠ¨ç”»æ ·å¼
+		// ÉèÖÃ¶¯»­ÑùÊ½
 		window.setWindowAnimations(DIALOG_ANIM_NORMAL);
 		this.context = context;
 		this.dialog = dialog;
@@ -318,7 +318,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * åˆ›å»ºå¯¹è¯æ¡†
+	 * ´´½¨¶Ô»°¿ò
 	 * 
 	 * @return
 	 */
@@ -335,7 +335,7 @@ public class CBDialogBuilder {
 		if(cancleBtn==null){
 			cancleBtn = (Button) getView(R.id.dialog_neg_btn);
 		}
-		// åˆ¤æ–­æ˜¯å¦éœ€è¦åˆ›å»ºå–æ¶ˆæŒ‰é’®
+		// ÅĞ¶ÏÊÇ·ñĞèÒª´´½¨È¡Ïû°´Å¥
 		if (confrimBtn != null && !showCancelButton
 				&& DIALOG_STYLE_CURRENT == DIALOG_STYLE_NORMAL) {
 			LayoutParams params = (LayoutParams) confrimBtn
@@ -479,7 +479,7 @@ public class CBDialogBuilder {
 		return this;
 	}
 	/**
-	 * è®¾ç½®å¯¹è¯æ¡†æ ‡é¢˜
+	 * ÉèÖÃ¶Ô»°¿ò±êÌâ
 	 * 
 	 * @param title
 	 * @return
@@ -498,7 +498,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * ç»™å¯¹è¯æ¡†è®¾ç½®åŠ¨ç”»
+	 * ¸ø¶Ô»°¿òÉèÖÃ¶¯»­
 	 * 
 	 * @return
 	 */
@@ -508,7 +508,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è®¾ç½®å¯¹è¯æ¡†çš„ä½ç½®
+	 * ÉèÖÃ¶Ô»°¿òµÄÎ»ÖÃ
 	 * 
 	 * @param location
 	 * @return
@@ -532,10 +532,10 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è®¾ç½®è¿›åº¦æ¡†è¶…æ—¶ç›‘å¬
+	 * ÉèÖÃ½ø¶È¿ò³¬Ê±¼àÌı
 	 * 
 	 * @param duration
-	 *            è¶…æ—¶æ—¶é—´ è®¾ç½®åå¾—åˆ°çš„æ—¶é—´ä¸º800*7*durationï¼Œ duration é»˜è®¤1000
+	 *            ³¬Ê±Ê±¼ä ÉèÖÃºóµÃµ½µÄÊ±¼äÎª800*7*duration£¬ duration Ä¬ÈÏ1000
 	 * @param progressOutTimeListener
 	 */
 	public CBDialogBuilder setOnProgressOutTimeListener(int duration,
@@ -549,10 +549,10 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è®¾ç½®å¯¹è¯æ¡†çš„æ¶ˆæ¯å†…å®¹
+	 * ÉèÖÃ¶Ô»°¿òµÄÏûÏ¢ÄÚÈİ
 	 * 
 	 * @param message
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setMessage(Object message) {
 		dialogMsg = getView(R.id.dialog_message);
@@ -567,10 +567,10 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è®¾ç½®æ¶ˆæ¯åœ¨å¯¹è¯æ¡†ä¸­çš„ä½ç½® MSG_LAYOUT_LEFT å±…å·¦ MSG_LAYOUT_CENTER å±…ä¸­ é»˜è®¤å±…ä¸­
+	 * ÉèÖÃÏûÏ¢ÔÚ¶Ô»°¿òÖĞµÄÎ»ÖÃ MSG_LAYOUT_LEFT ¾Ó×ó MSG_LAYOUT_CENTER ¾ÓÖĞ Ä¬ÈÏ¾ÓÖĞ
 	 * 
 	 * @param layout
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setMessageGravity(int layout) {
 		TextView dialogcontent = getView(R.id.dialog_message);
@@ -585,13 +585,13 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * ç»™æŒ‰é’®è®¾ç½®å›è°ƒç›‘å¬
+	 * ¸ø°´Å¥ÉèÖÃ»Øµ÷¼àÌı
 	 * 
 	 * @param btnClickListener
-	 *            æŒ‰é’®çš„å›è°ƒç›‘å¬
+	 *            °´Å¥µÄ»Øµ÷¼àÌı
 	 * @param isDissmiss
-	 *            ç‚¹å‡»æŒ‰é’®åæ˜¯å¦å–æ¶ˆå¯¹è¯æ¡†
-	 * @return
+	 *            µã»÷°´Å¥ºóÊÇ·ñÈ¡Ïû¶Ô»°¿ò
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setButtonClickListener(final boolean isDissmiss,
 			final onDialogbtnClickListener btnClickListener) {
@@ -599,10 +599,10 @@ public class CBDialogBuilder {
 			return this;
 		}
 		this.btnClickListener = btnClickListener;
-		// è®¾ç½®ç¡®è®¤æŒ‰é’®
+		// ÉèÖÃÈ·ÈÏ°´Å¥
 		final Button btnConfirm = getView(R.id.dialog_posi_btn);
 
-		// ç»™æŒ‰é’®ç»‘å®šç›‘å¬å™¨
+		// ¸ø°´Å¥°ó¶¨¼àÌıÆ÷
 		btnConfirm.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -617,7 +617,7 @@ public class CBDialogBuilder {
 			}
 		});
 
-		// è®¾ç½®æ¶ˆææŒ‰é’®
+		// ÉèÖÃÏû¼«°´Å¥
 		final Button btnCancel = getView(R.id.dialog_neg_btn);
 		btnCancel.setOnClickListener(new OnClickListener() {
 			@Override
@@ -655,39 +655,39 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * ç»™å¯¹è¯æ¡†ä¸­é—´å†…å®¹è®¾ç½®ä¸ºä¸€ä¸ªè‡ªå®šä¹‰view
+	 * ¸ø¶Ô»°¿òÖĞ¼äÄÚÈİÉèÖÃÎªÒ»¸ö×Ô¶¨Òåview
 	 * 
 	 * @param v
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setView(View v) {
 		msglayout = getView(R.id.dialog_msg_layout);
-		// åˆ é™¤åŸæ¥çš„textview
+		// É¾³ıÔ­À´µÄtextview
 		msglayout.removeAllViews();
-		// æ·»åŠ æ–°çš„view
+		// Ìí¼ÓĞÂµÄview
 		msglayout.addView(v);
 
 		return this;
 	}
 
 	/**
-	 * æ ¹æ®ç”¨æˆ·ä¼ å…¥çš„å¸ƒå±€æ–‡ä»¶åŠ è½½viewåˆ°å¯¹è¯æ¡†
+	 * ¸ù¾İÓÃ»§´«ÈëµÄ²¼¾ÖÎÄ¼ş¼ÓÔØviewµ½¶Ô»°¿ò
 	 * 
 	 * @param nameInput
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setView(int nameInput) {
 		ViewGroup msglayout = getView(R.id.dialog_msg_layout);
-		// éœ€è¦ä¼ å…¥æ·»åŠ çš„å¸ƒå±€æ–‡ä»¶çš„çˆ¶æ§ä»¶ï¼Œfalseè¡¨ç¤ºä¸éœ€è¦inflateæ–¹æ³•æ·»åŠ åˆ°çˆ¶æ§ä»¶ä¸‹ï¼Œè®©æˆ‘ä»¬è‡ªå·±æ·»åŠ 
+		// ĞèÒª´«ÈëÌí¼ÓµÄ²¼¾ÖÎÄ¼şµÄ¸¸¿Ø¼ş£¬false±íÊ¾²»ĞèÒªinflate·½·¨Ìí¼Óµ½¸¸¿Ø¼şÏÂ£¬ÈÃÎÒÃÇ×Ô¼ºÌí¼Ó
 		return setView(LayoutInflater.from(context).inflate(nameInput,
 				msglayout, false));
 	}
 
 	/**
-	 * æ˜¯å¦æ˜¾ç¤ºé¡¶éƒ¨å›¾æ ‡
+	 * ÊÇ·ñÏÔÊ¾¶¥²¿Í¼±ê
 	 * 
 	 * @param showIcon
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder showIcon(boolean showIcon) {
 		this.showTopIcon = showIcon;
@@ -708,13 +708,13 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * ç»™å¯¹è¯æ¡†è®¾ç½®ä¸€ä¸ªæ•°ç»„åˆ—è¡¨
+	 * ¸ø¶Ô»°¿òÉèÖÃÒ»¸öÊı×éÁĞ±í
 	 * 
 	 * @param items
 	 * @param listener
 	 * @param curSelectedPos
-	 *            å½“å‰é€‰ä¸­çš„position
-	 * @return
+	 *            µ±Ç°Ñ¡ÖĞµÄposition
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setItems(String[] items,
 			final onDialogItemClickListener listener, int curSelectedPos) {
@@ -722,9 +722,9 @@ public class CBDialogBuilder {
 			return this;
 		}
 		this.showIcon(false);
-		// ç»™å¯¹è¯æ¡†è®¾ç½®listview
+		// ¸ø¶Ô»°¿òÉèÖÃlistview
 		setView(R.layout.optiondialog_list_view);
-		// ç»™listview è®¾ç½®æ•°æ®
+		// ¸ølistview ÉèÖÃÊı¾İ
 		ListView listview = getView(android.R.id.list);
 
 		// ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,
@@ -732,12 +732,12 @@ public class CBDialogBuilder {
 		final DialogItemAdapter adapter = new DialogItemAdapter(items,
 				curSelectedPos);
 		listview.setAdapter(adapter);
-		// ç»™listviewé‡Œé¢çš„é€‰é¡¹è®¾ç½®ç›‘å¬å™¨
+		// ¸ølistviewÀïÃæµÄÑ¡ÏîÉèÖÃ¼àÌıÆ÷
 		listview.setOnItemClickListener(new OnItemClickListener() {
 
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				// è®©è°ƒç”¨è€…å†³å®šæ˜¯å¦å…³é—­å¯¹è¯æ¡†
+				// ÈÃµ÷ÓÃÕß¾ö¶¨ÊÇ·ñ¹Ø±Õ¶Ô»°¿ò
 				// dialog.dismiss();
 				adapter.setSelectedPos(position);
 				adapter.notifyDataSetChanged();
@@ -752,11 +752,11 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * é‡è½½æ–¹æ³•ä¼ å…¥ä¸€ä¸ªèµ„æºæ–‡ä»¶
+	 * ÖØÔØ·½·¨´«ÈëÒ»¸ö×ÊÔ´ÎÄ¼ş
 	 * 
 	 * @param resId
 	 * @param listener
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 
 	public CBDialogBuilder setItems(int resId,
@@ -766,13 +766,13 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * ä¼ å…¥ä¸€ä¸ªæ•°ç»„èµ„æºID
+	 * ´«ÈëÒ»¸öÊı×é×ÊÔ´ID
 	 * 
 	 * @param resId
 	 * @param listener
 	 * @param selectedPos
-	 *            å½“å‰é€‰ä¸­é¡¹
-	 * @return
+	 *            µ±Ç°Ñ¡ÖĞÏî
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setItems(int resId,
 			onDialogItemClickListener listener, int selectedPos) {
@@ -784,7 +784,7 @@ public class CBDialogBuilder {
 	 * set wheather dialog cancelable when touch outside
 	 * 
 	 * @param touchOutSideCancel
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setTouchOutSideCancelable(boolean touchOutSideCancel) {
 		this.touchOutSideCancel = touchOutSideCancel;
@@ -798,7 +798,7 @@ public class CBDialogBuilder {
 	 * set the dialog wheather can cancelable;
 	 * 
 	 * @param cancleable
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setCancelable(boolean cancleable) {
 		this.dialog.setCancelable(cancleable);
@@ -806,10 +806,10 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è®¾ç½®ç¡®å®šæŒ‰é’®æ–‡å­—
+	 * ÉèÖÃÈ·¶¨°´Å¥ÎÄ×Ö
 	 * 
 	 * @param confrim
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setConfirmButtonText(Object confrim) {
 		this.confirmBtnTX = getString(confrim);
@@ -817,10 +817,10 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è®¾ç½®è‡ªå®šä¹‰å›¾æ ‡
+	 * ÉèÖÃ×Ô¶¨ÒåÍ¼±ê
 	 * 
 	 * @param ResID
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setCustomIcon(int ResID) {
 		ImageView icon = getView(R.id.custom_icon);
@@ -847,10 +847,10 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è®¾ç½®å–æ¶ˆæŒ‰é’®æ–‡å­—
+	 * ÉèÖÃÈ¡Ïû°´Å¥ÎÄ×Ö
 	 * 
 	 * @param confrim
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setCancelButtonText(Object confrim) {
 		this.cancleBtnTX = getString(confrim);
@@ -858,15 +858,15 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è®¾ç½®è¿›åº¦
+	 * ÉèÖÃ½ø¶È
 	 * 
 	 * @param indicator
-	 *            AVLoadingIndicatorView.BallPulse BallClipRotatePulse ç­‰ç­‰
+	 *            AVLoadingIndicatorView.BallPulse BallClipRotatePulse µÈµÈ
 	 *            .BallPulse, .BallGridPulse, .BallClipRotate,
 	 *            .BallClipRotatePulse, .SquareSpin, .BallClipRotateMultiple,
 	 *            .BallPulseRise, .BallRotate,
 	 *
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setProgressIndicator(int indicator){
 		if(mAVIndicatorView!=null){
@@ -883,11 +883,11 @@ public class CBDialogBuilder {
 	}
 	
 	/**
-	 * æ ¹æ®å­æ§ä»¶IDå¾—åˆ°å­æ§ä»¶
+	 * ¸ù¾İ×Ó¿Ø¼şIDµÃµ½×Ó¿Ø¼ş
 	 * 
 	 * @param id
-	 *            å­æ§ä»¶ID
-	 * @return è¿”å›å­æ§ä»¶
+	 *            ×Ó¿Ø¼şID
+	 * @return ·µ»Ø×Ó¿Ø¼ş
 	 */
 	public <T extends View> T getView(int id) {
 
@@ -895,12 +895,12 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è§£æç”¨æˆ·ä¼ å…¥çš„æ•°æ®ï¼Œå­—ç¬¦ä¸²æˆ–è€…èµ„æºID
+	 * ½âÎöÓÃ»§´«ÈëµÄÊı¾İ£¬×Ö·û´®»òÕß×ÊÔ´ID
 	 * 
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	private String parseParam(Object param) {
-		// å¦‚æœæ˜¯èµ„æºid å°±é€šè¿‡ä¸Šä¸‹æ–‡ è·å–èµ„æº
+		// Èç¹ûÊÇ×ÊÔ´id ¾ÍÍ¨¹ıÉÏÏÂÎÄ »ñÈ¡×ÊÔ´
 		if (param instanceof Integer) {
 			return context.getString((Integer) param);
 		} else if (param instanceof String) {
@@ -910,39 +910,39 @@ public class CBDialogBuilder {
 
 	}
 
-	// å†…éƒ¨æ¥å£ç›‘å¬å™¨
+	// ÄÚ²¿½Ó¿Ú¼àÌıÆ÷
 
 	/**
-	 * è‡ªå®šä¹‰ç›‘å¬å™¨ç›‘å¬å¯¹è¯æ¡†æŒ‰é’®ç‚¹å‡»
+	 * ×Ô¶¨Òå¼àÌıÆ÷¼àÌı¶Ô»°¿ò°´Å¥µã»÷
 	 * 
 	 * @author zhl
 	 * 
 	 */
 	public interface onDialogbtnClickListener {
 		/**
-		 * ï¼ˆåŒºåˆ†ç‚¹å‡»çš„äº‹å·¦è¾¹æŒ‰é’®è¿˜æ˜¯å³è¾¹æŒ‰é’®ï¼‰--ç¡®è®¤
+		 * £¨Çø·Öµã»÷µÄÊÂ×ó±ß°´Å¥»¹ÊÇÓÒ±ß°´Å¥£©--È·ÈÏ
 		 */
 		public static final int BUTTON_CONFIRM = 0;
 		/**
-		 * ï¼ˆåŒºåˆ†ç‚¹å‡»çš„äº‹å·¦è¾¹æŒ‰é’®è¿˜æ˜¯å³è¾¹æŒ‰é’®ï¼‰--å–æ¶ˆ
+		 * £¨Çø·Öµã»÷µÄÊÂ×ó±ß°´Å¥»¹ÊÇÓÒ±ß°´Å¥£©--È¡Ïû
 		 */
 		public static final int BUTTON_CANCEL = 1;
 
 		/**
 		 * 
 		 * @param context
-		 *            ä¸Šä¸‹æ–‡
+		 *            ÉÏÏÂÎÄ
 		 * @param dialog
-		 *            ç‚¹å‡»çš„å“ªä¸ªå¯¹è¯æ¡†
+		 *            µã»÷µÄÄÄ¸ö¶Ô»°¿ò
 		 * @param whichBtn
-		 *            ç‚¹å‡»çš„å“ªä¸ªæŒ‰é’®
+		 *            µã»÷µÄÄÄ¸ö°´Å¥
 		 */
 		void onDialogbtnClick(Context context, Dialog dialog, int whichBtn);
 
 	}
 
 	/**
-	 * è‡ªå®šä¹‰ç›‘å¬å™¨ç›‘å¬å¯¹è¯æ¡†ä¸­çš„é€‰é¡¹ç‚¹å‡»
+	 * ×Ô¶¨Òå¼àÌıÆ÷¼àÌı¶Ô»°¿òÖĞµÄÑ¡Ïîµã»÷
 	 * 
 	 * @author yan
 	 * 
@@ -953,10 +953,10 @@ public class CBDialogBuilder {
 		 * 
 		 * @param context
 		 * @param dialogbuilder
-		 *            å¯¹è±¡
+		 *            ¶ÔÏó
 		 * @param dialog
 		 * @param position
-		 *            é€‰é¡¹è§’æ ‡
+		 *            Ñ¡Ïî½Ç±ê
 		 */
 		public void onDialogItemClick(DialogItemAdapter ItemAdapter,
 									  Context context, CBDialogBuilder dialogbuilder, Dialog dialog,
@@ -965,7 +965,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * è¿›åº¦æ¡†è¶…æ—¶ç›‘å¬
+	 * ½ø¶È¿ò³¬Ê±¼àÌı
 	 * 
 	 * @author long
 	 */
@@ -976,7 +976,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * dialogåˆ—è¡¨é€‰é¡¹çš„é€‚é…å™¨
+	 * dialogÁĞ±íÑ¡ÏîµÄÊÊÅäÆ÷
 	 * 
 	 * @author long
 	 */

@@ -12,7 +12,9 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
+//tasks.withType(JavaCompile) {
+//    options.encoding = "UTF-8"
+//}
 allprojects {
     repositories {
         jcenter()
