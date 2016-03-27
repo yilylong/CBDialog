@@ -320,7 +320,7 @@ public class CBDialogBuilder {
 	/**
 	 * 创建对话框
 	 * 
-	 * @return
+	 * @return Dialog
 	 */
 	public Dialog create() {
 		if(confrimBtn==null){
@@ -467,7 +467,7 @@ public class CBDialogBuilder {
 	 * set weather show cancel button, if true,the Dialog show two buttons
 	 * 
 	 * @param showCancelButton
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder showCancelButton(boolean showCancelButton) {
 		this.showCancelButton = showCancelButton;
@@ -482,7 +482,7 @@ public class CBDialogBuilder {
 	 * 设置对话框标题
 	 * 
 	 * @param title
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setTitle(Object title) {
 
@@ -500,7 +500,7 @@ public class CBDialogBuilder {
 	/**
 	 * 给对话框设置动画
 	 * 
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setDialogAnimation(int resId) {
 		this.dialog.getWindow().setWindowAnimations(resId);
@@ -511,7 +511,7 @@ public class CBDialogBuilder {
 	 * 设置对话框的位置
 	 * 
 	 * @param location
-	 * @return
+	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setDialoglocation(int location) {
 		Window window = this.dialog.getWindow();
