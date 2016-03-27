@@ -46,5 +46,11 @@
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
         android:text="AVLoading风格的进度框" />
+    <Button
+        android:id="@+id/custom_dialog_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:text="自定义dialog的layout布局" />
 
 </LinearLayout>

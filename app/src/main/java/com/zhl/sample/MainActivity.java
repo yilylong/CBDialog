@@ -24,6 +24,7 @@ public class MainActivity extends Activity implements OnClickListener {
         findViewById(R.id.btn_show_normal_dialog_progress).setOnClickListener(this);
         findViewById(R.id.btn_show_normal_dialog_progress_titanic).setOnClickListener(this);
         findViewById(R.id.btn_show_normal_dialog_progress_avloading).setOnClickListener(this);
+        findViewById(R.id.custom_dialog_layout).setOnClickListener(this);
     }
 
 
@@ -134,7 +135,18 @@ public class MainActivity extends Activity implements OnClickListener {
                         .setProgressIndicator(CBDialogBuilder.INDICATOR_BallRotate)
                         .create().show();
                 break;
+            case R.id.custom_dialog_layout:
+                new CBDialogBuilder(this,R.layout.layout_custom_dialog_layout,0.99f)
+                        .setTouchOutSideCancelable(true)
+                        .showCancelButton(false)
+                        .setDialoglocation(CBDialogBuilder.DIALOG_LOCATION_BOTTOM)
+                        .setTitle("这是一个自定义dialog布局样式的对话框")
+                        .setMessage("去除了dialog的圆角背景")
+                        .setConfirmButtonText("确定")
+                        .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM)
+                        .create().show();
 
+                break;
             default:
                 break;
         }
