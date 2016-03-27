@@ -53,7 +53,7 @@ public class BallSpinFadeLoaderIndicator extends BaseIndicatorController {
      * @param height
      * @param radius
      * @param angle
-     * @return
+     * @return Point
      */
     Point circleAt(int width,int height,float radius,double angle){
         float x= (float) (width/2+radius*(Math.cos(angle)));
