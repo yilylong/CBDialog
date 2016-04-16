@@ -27,12 +27,8 @@ import com.zhl.cbdialog.titanic.Titanic;
 import com.zhl.cbdialog.titanic.TitanicTextView;
 
 /**
- * 
- * 类名称：对话框工具类 类描述：创建对话框的工具类，可以设置不同样式，和动画风格
- * 
- * 创建人： ZhaoHaiLong 创建时间：2012-1-20 上午10:37:55
- * 
- *
+ * className:CBDialogBuilder an tool to create dialog fast
+ * creater:zhl
  */
 public class CBDialogBuilder {
 	public static final int INDICATOR_BallPulse=0;
@@ -64,155 +60,144 @@ public class CBDialogBuilder {
     public static final int INDICATOR_BallGridBeat=26;
     public static final int INDICATOR_SemiCircleSpin=27;
 	/**
-	 * 普通对话框
+	 * normal style
 	 */
 	public static final int DIALOG_STYLE_NORMAL = R.layout.dialog;
 	/**
-	 * metrial进度条风格
+	 * metrial style
 	 */
 	public static final int DIALOG_STYLE_PROGRESS = R.layout.dialog_progress;
 	/**
-	 * 一个文字水平上升的动画风格的进度框
+	 * TITANIC style
 	 */
 	public static final int DIALOG_STYLE_PROGRESS_TITANIC = R.layout.dialog_progress_titanic;
 	/**
-	 * 一个自定义动画进度框
+	 * avloading style
 	 */
 	public static final int DIALOG_STYLE_PROGRESS_AVLOADING = R.layout.dialog_progress_avloading;
 	/**
-	 * 缩放动画
+	 * animation normal style
 	 */
 	public static final int DIALOG_ANIM_NORMAL = R.style.DialogAnimation;
 	/**
-	 * 从下往上滑动动画
+	 * animation slidfrombottom style
 	 */
 	public static final int DIALOG_ANIM_SLID_BOTTOM = R.style.DialogAnimationSlidBottom;
 	/**
-	 * 从上往下滑动动画
+	 * animation slidfromtop style
 	 */
 	public static final int DIALOG_ANIM_SLID_TOP = R.style.DialogAnimationSlidTop;
 	/**
-	 * 从右往左滑动动画
+	 * animation slidfromright style
 	 */
 	public static final int DIALOG_ANIM_SLID_RIGHT = R.style.DialogAnimationSlidRight;
 	/**
-	 * 对话框宽度所占屏幕宽度的比例
+	 * Proportion of screen width
 	 */
 	public static final float WIDTHFACTOR = 0.75f;
 	/**
-	 * 对话框透明比例
+	 * alpha(0<alpha<1)
 	 */
 	public static final float ALPHAFACTOR = 1.0f;
 	/**
-	 * 对话框处于屏幕顶部位置
+	 * dialog location in the screen top
 	 */
 	public static final int DIALOG_LOCATION_TOP = 12;
 	/**
-	 * 对话框处于屏幕中间位置
+	 * dialog location in the screen center
 	 */
 	public static final int DIALOG_LOCATION_CENTER = 10;
 	/**
-	 * 对话框处于屏幕底部位置
+	 * dialog location in the bottom
 	 */
 	public static final int DIALOG_LOCATION_BOTTOM = 11;
 	/**
-	 * 消息位于对话框的位置 居左
+	 * message location layout in the left
 	 */
 	public static final int MSG_LAYOUT_LEFT = 1;
 	/**
-	 * 消息位于对话框的位置 居中
+	 * message layout in the center
 	 */
 	public static final int MSG_LAYOUT_CENTER = 0;
 	/**
-	 * 当前使用的风格
+	 * current dialog style
 	 */
 	private int DIALOG_STYLE_CURRENT = DIALOG_STYLE_NORMAL;
 	/**
-	 * 上下文
+	 *
 	 */
 	private Context context;
 	/**
-	 * Dialog对象
+	 * Dialog
 	 */
 	private Dialog dialog;
 	/**
-	 * 右边（确定）按钮
+	 * button confirm
 	 */
 	private Button confrimBtn;
 	/**
-	 * 左边（取消）按钮
+	 * button cancel
 	 */
 	private Button cancleBtn;
 	/**
-	 * 消息框布局
+	 * msg layout
 	 */
 	ViewGroup msglayout;
 	/**
-	 * 是否显示cancelbutton;
+	 * whether or not show the cancel button
 	 */
 	private boolean showCancelButton = false;
 	/**
-	 * 是否点击对话框外面取消对话框
+	 * can cancel by touch outside
 	 */
 	private boolean touchOutSideCancel = false;
-	private String confirmBtnTX = "确定", cancleBtnTX = "取消";
+
+	private String confirmBtnTX = "ok", cancleBtnTX = "cancel";
+
 	private onDialogbtnClickListener btnClickListener;
 	/**
-	 * 是否显示顶部图标
+	 * whether or not show top icon
 	 */
 	private boolean showTopIcon = true;
-	/**
-	 * 进度框样式用到的metrial风格
-	 */
 	private ProgressHelper mProgressHelper;
 	private TitanicTextView mTitanicTXview;
 	private Titanic titanic;
 	protected int count = -1;
 	/**
-	 * 进度框超时时间
+	 * progress dialog outtime
 	 */
 	private int outOfTime = 1000;
 	private onProgressOutTimeListener mProgressOutTimeListener;
 	private TextView dialogTitle, dialogMsg;
 	/**
-	 * 是否显示确认按钮
+	 * whether or not show confrim button
 	 */
 	private boolean showConfirmBtn = true;
 	/**
-	 * 进度条
+	 * avloadingindicationview progress view
 	 */
 	private AVLoadingIndicatorView mAVIndicatorView;
 
 	/**
-	 * 构造器一 创建一个基本dialog
-	 * 
+	 * create an basic dialog
 	 * @param context
 	 */
 	public CBDialogBuilder(Context context) {
 		this(context, DIALOG_STYLE_NORMAL);
 	}
 
-	// 重构构造函数 方便用户使用内部类监听器时使用
 	/**
-	 * 构造器二
-	 * 
 	 * @param context
-	 *            上下文
-	 * @param layoutStyle
-	 *            对话框风格
+	 * @param layoutStyle dialogstyle see DIALOG_STYLE
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle) {
 		this(context, layoutStyle, false);
 	}
 
 	/**
-	 * 构造器三
-	 * 
 	 * @param context
-	 * @param layoutStyle
-	 *            布局样式
+	 * @param layoutStyle dialogstyle
 	 * @param isSystemAlert
-	 *            是否是系统弹框（service等地方用到系统级别不依赖activity）
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle,
 			boolean isSystemAlert) {
@@ -220,14 +205,9 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 构造器四
-	 * 
 	 * @param context
-	 *            上下文
 	 * @param layoutStyle
-	 *            对话框布局样式
-	 * @param widthcoefficient
-	 *            对话框宽度时占屏幕宽度的比重（0-1）
+	 * @param widthcoefficient   Proportion of screen width
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle,
 			float widthcoefficient) {
@@ -235,16 +215,10 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 对话框生成器五
-	 * 
 	 * @param context
-	 *            上下文
 	 * @param layoutStyle
-	 *            样式
 	 * @param widthcoefficient
-	 *            对话框宽度所占屏幕宽度的比重（0-1）
-	 * @param alpha
-	 *            对话框透明度
+	 * @param alpha dialog alpha
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle,
 			float widthcoefficient, float alpha) {
@@ -252,31 +226,22 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 构造器
-	 * 
 	 * @param context
 	 * @param layoutStyle
-	 *            布局样式
-	 * @param isSystemAlert
-	 *            是否是系统弹框（service等地方用到系统级别不依赖activity）
+	 * @param isSystemAlert whethe or not dialog create from service
 	 * @param widthcoefficient
-	 *            对话框宽度所占屏幕宽度的比重（0-1）
 	 * @param alpha
-	 *            对话框透明度
 	 */
 	public CBDialogBuilder(Context context, int layoutStyle,
 			boolean isSystemAlert, float widthcoefficient, float alpha) {
 		this.DIALOG_STYLE_CURRENT = layoutStyle;
-		// theme 要传入一个样式去掉系统对话框的标题
+		// theme repleace the dialog system layout
 		Dialog dialog = new Dialog(context, R.style.Dialog);
-		// 设置对话框风格
 		dialog.setContentView(layoutStyle);
 		Window window = dialog.getWindow();
-		// 是否系统级弹框
 		if (isSystemAlert) {
 			window.setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
 		}
-		// 获取屏幕宽度
 		DisplayMetrics metrics = new DisplayMetrics();
 		window.getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		int screenwidth = metrics.widthPixels;
@@ -286,10 +251,7 @@ public class CBDialogBuilder {
 		} else {
 			width = (int) (screenwidth * WIDTHFACTOR);
 		}
-		// 设置对话框宽度
 		window.getAttributes().width = width;
-
-		// 设置透明
 		WindowManager.LayoutParams lp = window.getAttributes();
 		if (alpha > 0&&alpha<=1) {
 			lp.alpha = alpha;
@@ -297,7 +259,6 @@ public class CBDialogBuilder {
 			lp.alpha = ALPHAFACTOR;
 		}
 		window.setAttributes(lp);
-		// 设置动画样式
 		window.setWindowAnimations(DIALOG_ANIM_NORMAL);
 		this.context = context;
 		this.dialog = dialog;
@@ -318,8 +279,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 创建对话框
-	 * 
+	 * create an dialog
 	 * @return Dialog
 	 */
 	public Dialog create() {
@@ -335,7 +295,7 @@ public class CBDialogBuilder {
 		if(cancleBtn==null){
 			cancleBtn = (Button) getView(R.id.dialog_neg_btn);
 		}
-		// 判断是否需要创建取消按钮
+		// whether or not show the cancel button
 		if (confrimBtn != null && !showCancelButton
 				&& DIALOG_STYLE_CURRENT == DIALOG_STYLE_NORMAL) {
 			LayoutParams params = (LayoutParams) confrimBtn
@@ -465,7 +425,6 @@ public class CBDialogBuilder {
 
 	/**
 	 * set weather show cancel button, if true,the Dialog show two buttons
-	 * 
 	 * @param showCancelButton
 	 * @return CBDialogBuilder
 	 */
@@ -479,8 +438,6 @@ public class CBDialogBuilder {
 		return this;
 	}
 	/**
-	 * 设置对话框标题
-	 * 
 	 * @param title
 	 * @return CBDialogBuilder
 	 */
@@ -498,8 +455,6 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 给对话框设置动画
-	 * 
 	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setDialogAnimation(int resId) {
@@ -508,8 +463,6 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 设置对话框的位置
-	 * 
 	 * @param location
 	 * @return CBDialogBuilder
 	 */
@@ -532,10 +485,8 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 设置进度框超时监听
-	 * 
 	 * @param duration
-	 *            超时时间 设置后得到的时间为800*7*duration， duration 默认1000
+	 *           the result = 800*7*duration,duration default 1000
 	 * @param progressOutTimeListener
 	 */
 	public CBDialogBuilder setOnProgressOutTimeListener(int duration,
@@ -549,8 +500,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 设置对话框的消息内容
-	 * 
+	 * the dialog message
 	 * @param message
 	 * @return CBDialogBuilder
 	 */
@@ -567,8 +517,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 设置消息在对话框中的位置 MSG_LAYOUT_LEFT 居左 MSG_LAYOUT_CENTER 居中 默认居中
-	 * 
+	 * set the message gravity MSG_LAYOUT_LEFT or  MSG_LAYOUT_CENTER default center
 	 * @param layout
 	 * @return CBDialogBuilder
 	 */
@@ -585,12 +534,9 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 给按钮设置回调监听
-	 * 
+	 * set the listener of the buttons
 	 * @param btnClickListener
-	 *            按钮的回调监听
-	 * @param isDissmiss
-	 *            点击按钮后是否取消对话框
+	 * @param isDissmiss whethe or nor dimiss dialog when button clicked
 	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setButtonClickListener(final boolean isDissmiss,
@@ -599,10 +545,7 @@ public class CBDialogBuilder {
 			return this;
 		}
 		this.btnClickListener = btnClickListener;
-		// 设置确认按钮
 		final Button btnConfirm = getView(R.id.dialog_posi_btn);
-
-		// 给按钮绑定监听器
 		btnConfirm.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -617,7 +560,6 @@ public class CBDialogBuilder {
 			}
 		});
 
-		// 设置消极按钮
 		final Button btnCancel = getView(R.id.dialog_neg_btn);
 		btnCancel.setOnClickListener(new OnClickListener() {
 			@Override
@@ -655,37 +597,33 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 给对话框中间内容设置为一个自定义view
-	 * 
+	 * set a custom view to the dialog.the custom view will be wrapped by the message contanier layout
 	 * @param v
 	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setView(View v) {
 		msglayout = getView(R.id.dialog_msg_layout);
-		// 删除原来的textview
+		// remove the original textview
 		msglayout.removeAllViews();
-		// 添加新的view
+		// add the custom view
 		msglayout.addView(v);
-
 		return this;
 	}
 
 	/**
-	 * 根据用户传入的布局文件加载view到对话框
+	 * set the custom view resid to the dialog
 	 * 
 	 * @param nameInput
 	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setView(int nameInput) {
 		ViewGroup msglayout = getView(R.id.dialog_msg_layout);
-		// 需要传入添加的布局文件的父控件，false表示不需要inflate方法添加到父控件下，让我们自己添加
 		return setView(LayoutInflater.from(context).inflate(nameInput,
 				msglayout, false));
 	}
 
 	/**
-	 * 是否显示顶部图标
-	 * 
+	 *whether or not show the icon
 	 * @param showIcon
 	 * @return CBDialogBuilder
 	 */
@@ -702,18 +640,22 @@ public class CBDialogBuilder {
 		return this;
 	}
 
+	/**
+	 * set dialog content items by array
+	 * @param items
+	 * @param listener
+     * @return
+     */
 	public CBDialogBuilder setItems(String[] items,
 			final onDialogItemClickListener listener) {
 		return setItems(items, listener, -1);
 	}
 
 	/**
-	 * 给对话框设置一个数组列表
-	 * 
+	 * set dialog content items by array
 	 * @param items
 	 * @param listener
-	 * @param curSelectedPos
-	 *            当前选中的position
+	 * @param curSelectedPos current selected position
 	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setItems(String[] items,
@@ -722,22 +664,18 @@ public class CBDialogBuilder {
 			return this;
 		}
 		this.showIcon(false);
-		// 给对话框设置listview
 		setView(R.layout.optiondialog_list_view);
-		// 给listview 设置数据
 		ListView listview = getView(android.R.id.list);
-
 		// ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,
 		// R.layout.item_option_text, items);
 		final DialogItemAdapter adapter = new DialogItemAdapter(items,
 				curSelectedPos);
 		listview.setAdapter(adapter);
-		// 给listview里面的选项设置监听器
 		listview.setOnItemClickListener(new OnItemClickListener() {
 
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				// 让调用者决定是否关闭对话框
+				// let the developer decision whether or not dismiss
 				// dialog.dismiss();
 				adapter.setSelectedPos(position);
 				adapter.notifyDataSetChanged();
@@ -747,13 +685,11 @@ public class CBDialogBuilder {
 				}
 			}
 		});
-
 		return this;
 	}
 
 	/**
-	 * 重载方法传入一个资源文件
-	 * 
+	 * set content items by resource id
 	 * @param resId
 	 * @param listener
 	 * @return CBDialogBuilder
@@ -766,12 +702,10 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 传入一个数组资源ID
-	 * 
+	 * set content items by resource id
 	 * @param resId
 	 * @param listener
 	 * @param selectedPos
-	 *            当前选中项
 	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setItems(int resId,
@@ -806,8 +740,6 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 设置确定按钮文字
-	 * 
 	 * @param confrim
 	 * @return CBDialogBuilder
 	 */
@@ -817,8 +749,6 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 设置自定义图标
-	 * 
 	 * @param ResID
 	 * @return CBDialogBuilder
 	 */
@@ -847,8 +777,6 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 设置取消按钮文字
-	 * 
 	 * @param confrim
 	 * @return CBDialogBuilder
 	 */
@@ -858,14 +786,13 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 设置进度
+	 * set the progress indicator when use {@link #DIALOG_STYLE_PROGRESS_AVLOADING}
 	 * 
 	 * @param indicator
-	 *            AVLoadingIndicatorView.BallPulse BallClipRotatePulse 等等
-	 *            .BallPulse, .BallGridPulse, .BallClipRotate,
-	 *            .BallClipRotatePulse, .SquareSpin, .BallClipRotateMultiple,
-	 *            .BallPulseRise, .BallRotate,
-	 *
+	 * 			{@link #INDICATOR_BallPulse}
+	 * 			{@link #INDICATOR_BallGridPulse}
+	 * 			{@link #INDICATOR_BallClipRotate}
+	 * 			{@link #INDICATOR_BallClipRotatePulse}...
 	 * @return CBDialogBuilder
 	 */
 	public CBDialogBuilder setProgressIndicator(int indicator){
@@ -883,11 +810,8 @@ public class CBDialogBuilder {
 	}
 	
 	/**
-	 * 根据子控件ID得到子控件
-	 * 
 	 * @param id
-	 *            子控件ID
-	 * @return 返回子控件
+	 * @return
 	 */
 	public <T extends View> T getView(int id) {
 
@@ -895,12 +819,10 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 解析用户传入的数据，字符串或者资源ID
-	 * 
+	 * parse the params
 	 * @return CBDialogBuilder
 	 */
 	private String parseParam(Object param) {
-		// 如果是资源id 就通过上下文 获取资源
 		if (param instanceof Integer) {
 			return context.getString((Integer) param);
 		} else if (param instanceof String) {
@@ -910,41 +832,35 @@ public class CBDialogBuilder {
 
 	}
 
-	// 内部接口监听器
 
 	/**
-	 * 自定义监听器监听对话框按钮点击
-	 * 
+	 * the buttons click listener
 	 * @author zhl
 	 * 
 	 */
 	public interface onDialogbtnClickListener {
 		/**
-		 * （区分点击的事左边按钮还是右边按钮）--确认
+		 * confirm click
 		 */
 		public static final int BUTTON_CONFIRM = 0;
 		/**
-		 * （区分点击的事左边按钮还是右边按钮）--取消
+		 * cancel click
 		 */
 		public static final int BUTTON_CANCEL = 1;
 
 		/**
 		 * 
 		 * @param context
-		 *            上下文
 		 * @param dialog
-		 *            点击的哪个对话框
-		 * @param whichBtn
-		 *            点击的哪个按钮
+		 * @param whichBtn  ({@link #BUTTON_CONFIRM} or {@link #BUTTON_CANCEL})
 		 */
 		void onDialogbtnClick(Context context, Dialog dialog, int whichBtn);
 
 	}
 
 	/**
-	 * 自定义监听器监听对话框中的选项点击
-	 * 
-	 * @author yan
+	 * item click listener to list in the dialog
+	 * @author zhl
 	 * 
 	 */
 	public interface onDialogItemClickListener {
@@ -953,10 +869,8 @@ public class CBDialogBuilder {
 		 * 
 		 * @param context
 		 * @param dialogbuilder
-		 *            对象
 		 * @param dialog
 		 * @param position
-		 *            选项角标
 		 */
 		public void onDialogItemClick(DialogItemAdapter ItemAdapter,
 									  Context context, CBDialogBuilder dialogbuilder, Dialog dialog,
@@ -965,8 +879,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * 进度框超时监听
-	 * 
+	 * progress outtime listener
 	 * @author long
 	 */
 	public interface onProgressOutTimeListener {
@@ -976,7 +889,7 @@ public class CBDialogBuilder {
 	}
 
 	/**
-	 * dialog列表选项的适配器
+	 * dialog
 	 * 
 	 * @author long
 	 */

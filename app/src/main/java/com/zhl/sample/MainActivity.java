@@ -41,7 +41,6 @@ public class MainActivity extends Activity implements OnClickListener {
                         .setCancelButtonText("取消")
                         .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM)
                         .create().show();
-
                 break;
             case R.id.btn_show_normal_dialog_with_listener:
                 new CBDialogBuilder(this)
