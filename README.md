@@ -11,8 +11,11 @@
 
 ###How To Useage
 
-    compile 'com.zhl.cbdialog:CBDialog:1.0.0'
+#in the gradle
 
+    compile 'com.zhl.cbdialog:CBDialog:1.0.0'
+    
+#then 
 
     new CBDialogBuilder(this)
     .setTouchOutSideCancelable(true)
