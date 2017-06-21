@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/yilylong/CBDialog.svg)](https://jitpack.io/#yilylong/CBDialog)
 # CBDialog
 一个快速创建对话框的工具类库
 ============
