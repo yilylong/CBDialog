@@ -45,14 +45,13 @@ code
     .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM)
     .create().show();  
 
-.create() 返回一个Dialog<br/>
-.show() 显示对话框  
-- 
+
 可以传入不同的样式<br/>
-CBDialogBuilder.DIALOG_STYLE_NORMAL
-CBDialogBuilder.DIALOG_STYLE_PROGRESS
-CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC
-CBDialogBuilder.DIALOG_STYLE_PROGRESS_AVLOADING
+
+    CBDialogBuilder.DIALOG_STYLE_NORMAL
+    CBDialogBuilder.DIALOG_STYLE_PROGRESS
+    CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC
+    CBDialogBuilder.DIALOG_STYLE_PROGRESS_AVLOADING
 
     new CBDialogBuilder(this, CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC).create();
     .setTouchOutSideCancelable(true) 设置是否点击对话框以外的区域dismiss对话框  
@@ -106,10 +105,9 @@ CBDialogBuilder.DIALOG_STYLE_PROGRESS_AVLOADING
  
 设置自定义的dialog布局文件
 -- 
-
 在构建的时候传入R.layout.layout_custom_dialog_layout自定义布局文件即可，但是里面的个控件（标题，消息，按钮）的ID要跟cb_dialog.xml 里面一致<br/>
 
-     new CBDialogBuilder(this, R.layout.layout_custom_dialog_layout, 1.0f)
+    new CBDialogBuilder(this, R.layout.layout_custom_dialog_layout, 1.0f)
                         ...
                         .create().show();   
  
