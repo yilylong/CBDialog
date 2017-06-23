@@ -5,10 +5,10 @@
 集成了[sweet-alert-dialog](https://github.com/pedant/sweet-alert-dialog)<br/>
 集成了[Titanic](https://github.com/RomainPiel/Titanic)的进度框动画样式<br/>
 集成了[AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)的动画样式<br/>
-![](https://raw.githubusercontent.com/yilylong/ImageResource/master/cbdialog_1.png)  
-![](https://raw.githubusercontent.com/yilylong/ImageResource/master/cbdialog_2.png)  
-![](https://raw.githubusercontent.com/yilylong/ImageResource/master/cbdialog_3.png)  
-![](https://raw.githubusercontent.com/yilylong/ImageResource/master/cbdialog_4.png)  
+<img src='/show_1.png'/>
+<img src='/show_2.png'/>
+<img src='/show_3.png'/>
+<img src='/GIF.gif'/>
 
 ###How To Useage
 
