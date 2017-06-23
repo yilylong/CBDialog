@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:cacheColorHint="@color/color_transparent"
+    android:divider="@null"
+    android:dividerHeight="0dp"
+    android:listSelector="@color/color_transparent"
+    android:padding="5dp"
+    android:scrollbars="none" >
+
+</ListView>

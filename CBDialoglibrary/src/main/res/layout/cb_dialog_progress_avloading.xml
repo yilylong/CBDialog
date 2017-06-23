@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cb_dialog_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cb_dialog_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/error_frame"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/error_circle" />
+
+        <ImageView
+            android:id="@+id/error_x"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center"
+            android:src="@drawable/error_center_x" />
+    </FrameLayout>
+
+    <com.zhl.cbdialog.AVLoadingIndicatorView
+        android:id="@+id/progressAVloading"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        app:indicator="BallBeat"
+        app:indicator_color="@color/blue_btn_bg_color" />
+
+    <TextView
+        android:id="@+id/dialog_message"
+        style="@style/dialog_msg_style"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="loading..."
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/dialog_btn_line_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/btn_bg_line"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/dialog_posi_btn"
+        style="@style/dialog_button_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="确定"
+        android:textColor="@color/cb_btn_bg_blue"
+        android:visibility="gone" />
+
+</LinearLayout>

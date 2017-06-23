@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/com.cb.cbdialog.pnikosis.materialishprogress"
+    android:id="@+id/cb_dialog_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/cb_dialog_background"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/error_frame"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/error_circle" />
+
+        <ImageView
+            android:id="@+id/error_x"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:scaleType="center"
+            android:src="@drawable/error_center_x" />
+    </FrameLayout>
+
+    <com.zhl.cbdialog.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progressWheel"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        wheel:progressIndeterminate="true" />
+
+    <TextView
+        android:id="@+id/dialog_message"
+        style="@style/dialog_msg_style"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="loading..."
+        android:textSize="16sp" />
+
+    <View
+        android:id="@+id/dialog_btn_line_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/btn_bg_line"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/dialog_posi_btn"
+        style="@style/dialog_button_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/cb_btn_bg_blue"
+        android:text="确定"
+        android:visibility="gone" />
+
+</LinearLayout>
