@@ -45,15 +45,21 @@ code
     .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM)
     .create().show();  
 
-.create() 返回一个Dialog .show() 显示对话框  
-可以传入不同样式。比如设置显示的是titanic风格的进度框
---
+.create() 返回一个Dialog<br/>
+.show() 显示对话框  
+- 
+可以传入不同的样式<br/>
+CBDialogBuilder.DIALOG_STYLE_NORMAL
+CBDialogBuilder.DIALOG_STYLE_PROGRESS
+CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC
+CBDialogBuilder.DIALOG_STYLE_PROGRESS_AVLOADING
+-
     new CBDialogBuilder(this, CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC).create();
     .setTouchOutSideCancelable(true) 设置是否点击对话框以外的区域dismiss对话框  
     .showCancelButton(true) 是否显示取消按钮
     .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM) 设置对话框的动画样式 
     .setDialoglocation(CBDialogBuilder.DIALOG_LOCATION_BOTTOM)  设置对话框位于屏幕的位置
-    .setButtonClickListener(true, new CBDialogBuilder.onDialogbtnClickListener() {
+    .setButtonClickListener(true, new CBDialogBuilder.onDialogbtnClickListener() { 添加按钮回调监听
                             @Override
                             public void onDialogbtnClick(Context context, Dialog dialog, int whichBtn) {
                                 switch (whichBtn) {
@@ -68,7 +74,7 @@ code
                                 }
                             }
                         })
-                        添加按钮回调监听
+                       
 			
 设置一个列表 和 列表项选中回调监听
 --
@@ -96,6 +102,19 @@ code
 
     .setProgressIndicatorColor(0xaa198675)
     .setProgressIndicator(CBDialogBuilder.INDICATOR_BallRotate)
+    
+设置自定义的dialog布局文件
+--      
+在构建的时候传入R.layout.layout_custom_dialog_layout自定义布局文件即可，但是里面的个控件（标题，消息，按钮）的ID要跟cb_dialog.xml 里面一致。
+
+     new CBDialogBuilder(this, R.layout.layout_custom_dialog_layout, 1.0f)
+                        ...
+                        .create().show();   
+ 
+ 设置自定义消息布局文件
+--      
+    .setView(R.layout.custom_msg_view)
+ 
 
 更多配置方法参考DEMO
 
