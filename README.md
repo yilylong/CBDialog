@@ -5,9 +5,9 @@
 集成了[sweet-alert-dialog](https://github.com/pedant/sweet-alert-dialog)<br/>
 集成了[Titanic](https://github.com/RomainPiel/Titanic)的进度框动画样式<br/>
 集成了[AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)的动画样式<br/>
-<img src='/show_1.png'/>
-<img src='/show_2.png'/>
-<img src='/show_3.png'/>
+<img src='/show_1.png'/><br/>
+<img src='/show_2.png'/><br/>
+<img src='/show_3.png'/><br/>
 <img src='/GIF.gif'/>
 
 How To Useage
@@ -47,8 +47,7 @@ code
 .create() 返回一个Dialog .show() 显示对话框  
 可以传入不同样式。比如设置显示的是titanic风格的进度框
 --
-new CBDialogBuilder(this, CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC).create();
-
+    new CBDialogBuilder(this, CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC).create();
     .setTouchOutSideCancelable(true) 设置是否点击对话框以外的区域dismiss对话框  
     .showCancelButton(true) 是否显示取消按钮
     .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM) 设置对话框的动画样式 
