@@ -2,6 +2,7 @@
 # CBDialog
 一个快速创建对话框的工具类库
 ============
+支持各种样式的配置
 集成了[sweet-alert-dialog](https://github.com/pedant/sweet-alert-dialog)<br/>
 集成了[Titanic](https://github.com/RomainPiel/Titanic)的进度框动画样式<br/>
 集成了[AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)的动画样式<br/>
@@ -97,3 +98,10 @@ code
     .setProgressIndicator(CBDialogBuilder.INDICATOR_BallRotate)
 
 更多配置方法参考DEMO
+
+感谢
+==
+[sweet-alert-dialog](https://github.com/pedant/sweet-alert-dialog)<br/>
+[Titanic](https://github.com/RomainPiel/Titanic)的进度框动画样式<br/>
+[AVLoadingIndicatorView](https://github.com/81813780/AVLoadingIndicatorView)的动画样式<br/>
+
