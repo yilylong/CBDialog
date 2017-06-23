@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
+<?xml version="1.0" encoding="UTF-8"?><!--
  Copyright (C) 2008 ZXing authors
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +21,6 @@
     <color name="color_transparent">#00000000</color>
     <color name="tip_textcolor">#727272</color>
     <color name="sweet_dialog_bg_color">#FFFFFF</color>
-    <color name="dialog_bg_color_grey">#EFEFEF</color>
     <color name="button_text_color">#FFFFFF</color>
     <color name="gray_btn_bg_color">#D0D0D0</color>
     <color name="gray_btn_bg_pressed_color">#B6B6B6</color>
@@ -47,5 +45,8 @@
     <color name="item_text_color">#4c4c4c</color>
     <color name="item_text_color_pressed">@color/success_stroke_color</color>
     <color name="item_selected_rect">@color/success_stroke_color</color>
+    <color name="cb_btn_bg_blue">#4C9AFA</color>
+    <color name="cb_btn_bg_gray">#313232</color>
+    <color name="btn_bg_line">#E9E9E9</color>
 
 </resources>

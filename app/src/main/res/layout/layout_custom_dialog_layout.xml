@@ -99,7 +99,7 @@
 
         <Button
             android:id="@+id/dialog_posi_btn"
-            style="@style/dialog_blue_button"
+            style="@style/dialog_button_style"
             android:background="@drawable/custom_btn_bg"
             android:text="确定" />
     </LinearLayout>

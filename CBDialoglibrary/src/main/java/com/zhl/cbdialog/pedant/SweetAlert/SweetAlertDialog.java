@@ -139,7 +139,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.alert_dialog);
+        setContentView(R.layout.cb_alert_dialog);
 
         mDialogView = getWindow().getDecorView().findViewById(android.R.id.content);
         mTitleTextView = (TextView)findViewById(R.id.title_text);
@@ -283,7 +283,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     public SweetAlertDialog showCancelButton (boolean isShow) {
         mShowCancel = isShow;
         if (mCancelButton != null) {
-            mCancelButton.setVisibility(mShowCancel ? View.VISIBLE : View.GONE);
+            mCancelButton.setVisibility(isShow ? View.VISIBLE : View.GONE);
         }
         return this;
     }
