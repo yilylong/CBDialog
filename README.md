@@ -10,7 +10,8 @@
 <img src='/show_3.png'/>
 <img src='/GIF.gif'/>
 
-###How To Useage
+How To Useage
+---
 
 引入依赖
 
@@ -30,7 +31,8 @@ Step 2. Add the dependency
 	}
 
     
-#code 
+code
+--
 
     new CBDialogBuilder(this)
     .setTouchOutSideCancelable(true)
@@ -42,9 +44,9 @@ Step 2. Add the dependency
     .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM)
     .create().show();  
 
-
-######.create() 返回一个Dialog .show() 显示对话框  
+.create() 返回一个Dialog .show() 显示对话框  
 可以传入不同样式。比如设置显示的是titanic风格的进度框
+--
 new CBDialogBuilder(this, CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC).create();
 
     .setTouchOutSideCancelable(true) 设置是否点击对话框以外的区域dismiss对话框  
@@ -67,8 +69,9 @@ new CBDialogBuilder(this, CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC).create(
                             }
                         })
                         添加按钮回调监听
-
-#####设置一个列表 和 列表项选中回调监听
+			
+设置一个列表 和 列表项选中回调监听
+--
 
     .setItems(new String[]{"较小", "中等", "较大", "巨无霸"}, new CBDialogBuilder.onDialogItemClickListener() {
        @Override
@@ -78,7 +81,8 @@ new CBDialogBuilder(this, CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC).create(
         }
      }, 2)
 
-#####设置一个进度框的超时监听
+设置一个进度框的超时监听
+--
 
      .setOnProgressOutTimeListener(5, new CBDialogBuilder.onProgressOutTimeListener() {
                             @Override
@@ -87,9 +91,10 @@ new CBDialogBuilder(this, CBDialogBuilder.DIALOG_STYLE_PROGRESS_TITANIC).create(
                             }
       })
       
-#####设置avloading进度框动画样式颜色
+设置avloading进度框动画样式颜色
+--
 
     .setProgressIndicatorColor(0xaa198675)
     .setProgressIndicator(CBDialogBuilder.INDICATOR_BallRotate)
 
-详情参考DEMO
+更多配置方法参考DEMO
