@@ -1,5 +1,6 @@
 package com.zhl.cbdialog;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.CountDownTimer;
@@ -531,6 +532,9 @@ public class CBDialogBuilder {
                     }
                 }
             }.start();
+        }
+        if(context instanceof Activity){
+            dialog.setOwnerActivity((Activity) context);
         }
         return dialog;
     }
