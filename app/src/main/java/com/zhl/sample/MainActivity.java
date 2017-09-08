@@ -194,10 +194,10 @@ public class MainActivity extends Activity implements OnClickListener {
                         .create().show();
                 break;
             case R.id.sweetAlert_dialog_success:
-                new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE).show();
+                new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE,0.5f).show();
                 break;
             case R.id.sweetAlert_dialog_error:
-                new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE).show();
+                new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE,0.7F).setCancelText("Quit").show();
                 break;
             default:
                 break;

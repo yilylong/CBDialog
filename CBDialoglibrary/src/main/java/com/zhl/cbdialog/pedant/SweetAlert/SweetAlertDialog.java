@@ -6,7 +6,9 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -48,6 +50,7 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     private ImageView mErrorX;
     private View mSuccessLeftMask;
     private View mSuccessRightMask;
+    private View buttonDividerLine;
     private Drawable mCustomImgDrawable;
     private ImageView mCustomImage;
     private Button mConfirmButton;
@@ -64,6 +67,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     public static final int WARNING_TYPE = 3;
     public static final int CUSTOM_IMAGE_TYPE = 4;
     public static final int PROGRESS_TYPE = 5;
+    private float windowWidthRate = 0.75f;// 屏幕宽度比例 0-1
+
 
     public static interface OnSweetClickListener {
         public void onClick(SweetAlertDialog sweetAlertDialog);
@@ -72,9 +77,14 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
     public SweetAlertDialog(Context context) {
         this(context, NORMAL_TYPE);
     }
-
-    public SweetAlertDialog(Context context, int alertType) {
+    public SweetAlertDialog(Context context, int alertType){
+        this(context, alertType,0.75f);
+    }
+    public SweetAlertDialog(Context context, int alertType,float windowWidthRate) {
         super(context, R.style.alert_dialog);
+        if(windowWidthRate>0&&windowWidthRate<=1){
+            this.windowWidthRate = windowWidthRate;
+        }
         setCancelable(true);
         setCanceledOnTouchOutside(false);
         mProgressHelper = new ProgressHelper(context);
@@ -155,6 +165,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mWarningFrame = (FrameLayout)findViewById(R.id.warning_frame);
         mConfirmButton = (Button)findViewById(R.id.confirm_button);
         mCancelButton = (Button)findViewById(R.id.cancel_button);
+        buttonDividerLine = findViewById(R.id.btn_line_verticle);
+        buttonDividerLine.setVisibility(View.GONE);
         mProgressHelper.setProgressWheel((ProgressWheel)findViewById(R.id.progressWheel));
         mConfirmButton.setOnClickListener(this);
         mCancelButton.setOnClickListener(this);
@@ -165,6 +177,10 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         setConfirmText(mConfirmText);
         changeAlertType(mAlertType, true);
 
+        Window window = getWindow();
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        window.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        window.getAttributes().width = (int) (displayMetrics.widthPixels*windowWidthRate);
     }
 
     private void restore () {
@@ -284,6 +300,8 @@ public class SweetAlertDialog extends Dialog implements View.OnClickListener {
         mShowCancel = isShow;
         if (mCancelButton != null) {
             mCancelButton.setVisibility(isShow ? View.VISIBLE : View.GONE);
+            buttonDividerLine.setVisibility(View.VISIBLE);
+            mConfirmButton.setBackgroundResource(R.drawable.cb_button_background_right);
         }
         return this;
     }

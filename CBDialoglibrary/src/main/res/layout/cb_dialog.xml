@@ -87,7 +87,7 @@
                 style="@style/dialog_button_style"
                 android:background="@drawable/cb_button_background_left"
                 android:text="取消"
-                android:textColor="@color/cb_btn_bg_gray"
+                android:textColor="@color/cb_btn_bg_blue"
                 android:visibility="gone" />
 
             <View
