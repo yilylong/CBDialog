@@ -61,7 +61,7 @@ public class MainActivity extends Activity implements OnClickListener {
                         .setConfirmButtonText("确定")
                         .setConfirmBackgroundResouce(R.drawable.custom_button_background_right)
                         .setConfirmButtonTextColor(Color.WHITE)
-                        .setCancelButtonText("取消")
+                        .setCancelButtonText("Quit")
                         .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM)
                         .create().show();
                 break;

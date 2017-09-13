@@ -361,6 +361,12 @@ public class CBDialogBuilder {
             mAVIndicatorView = getView(R.id.progressAVloading);
         }
         dialogRootLayout = getView(R.id.cb_dialog_root_layout);
+        if (confrimBtn == null) {
+            confrimBtn = getView(R.id.dialog_posi_btn);
+        }
+        if (cancelBtn == null) {
+            cancelBtn =  getView(R.id.dialog_neg_btn);
+        }
     }
 
     /**
@@ -879,6 +885,9 @@ public class CBDialogBuilder {
      * @return
      */
     public CBDialogBuilder setConfirmButtonText(Object confrim) {
+        if (confrimBtn == null) {
+            confrimBtn = getView(R.id.dialog_posi_btn);
+        }
         this.confirmBtnTX = getString(confrim);
         return this;
     }
@@ -889,6 +898,9 @@ public class CBDialogBuilder {
      * @return
      */
     public CBDialogBuilder setConfirmButtonTextSize(int textSizeSP) {
+        if (confrimBtn == null) {
+            confrimBtn = getView(R.id.dialog_posi_btn);
+        }
         if(this.confrimBtn!=null){
             this.confrimBtn.setTextSize(TypedValue.COMPLEX_UNIT_SP,textSizeSP);
         }
@@ -928,11 +940,14 @@ public class CBDialogBuilder {
     /**
      * 设置取消按钮文字
      *
-     * @param confrim
+     * @param cancelTx
      * @return
      */
-    public CBDialogBuilder setCancelButtonText(Object confrim) {
-        this.cancleBtnTX = getString(confrim);
+    public CBDialogBuilder setCancelButtonText(Object cancelTx) {
+        if (cancelBtn == null) {
+            cancelBtn =  getView(R.id.dialog_neg_btn);
+        }
+        this.cancleBtnTX = getString(cancelTx);
         return this;
     }
 
@@ -942,6 +957,9 @@ public class CBDialogBuilder {
      * @return
      */
     public CBDialogBuilder setCancelButtonTextSize(int textSizeSP) {
+        if (cancelBtn == null) {
+            cancelBtn =  getView(R.id.dialog_neg_btn);
+        }
         if(this.cancelBtn!=null){
             this.cancelBtn.setTextSize(TypedValue.COMPLEX_UNIT_SP,textSizeSP);
         }
@@ -1009,6 +1027,9 @@ public class CBDialogBuilder {
      * @return
      */
     public CBDialogBuilder setConfirmButtonTextColor(int color) {
+        if (confrimBtn == null) {
+            confrimBtn = getView(R.id.dialog_posi_btn);
+        }
         if(this.confrimBtn!=null){
             this.confrimBtn.setTextColor(color);
         }
@@ -1020,6 +1041,9 @@ public class CBDialogBuilder {
      * @return
      */
     public CBDialogBuilder setCancelButtonTextColor(int color) {
+        if (cancelBtn == null) {
+            cancelBtn = getView(R.id.dialog_neg_btn);
+        }
         if(this.cancelBtn!=null){
             this.cancelBtn.setTextColor(color);
         }
