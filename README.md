@@ -117,6 +117,10 @@ code
    
     .setView(R.layout.custom_msg_view)
  
+自定义消息布局的运用示例
+--
+<img src='GIF2.gif'/>
+
 
 更多配置方法参考DEMO
 
