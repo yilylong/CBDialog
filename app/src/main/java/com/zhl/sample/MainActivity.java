@@ -6,8 +6,12 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.util.TypedValue;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -103,6 +107,7 @@ public class MainActivity extends Activity implements OnClickListener {
                         .create().show();
                 break;
             case R.id.btn_show_normal_dialog_with_items:
+                final String[] itemOptions = new String[]{"较小", "中等", "较大", "巨无霸"};
                 new CBDialogBuilder(this)
                         .setTouchOutSideCancelable(false)
                         .showConfirmButton(false)
@@ -110,7 +115,7 @@ public class MainActivity extends Activity implements OnClickListener {
                         .setConfirmButtonText("ok")
                         .setCancelButtonText("cancel")
                         .setDialogAnimation(CBDialogBuilder.DIALOG_ANIM_SLID_BOTTOM)
-                        .setItems(new String[]{"较小", "中等", "较大", "巨无霸"}, new CBDialogBuilder.onDialogItemClickListener() {
+                        .setItems(itemOptions, new CBDialogBuilder.onDialogItemClickListener() {
 
                             @Override
                             public void onDialogItemClick(CBDialogBuilder.DialogItemAdapter ItemAdapter,
@@ -119,6 +124,48 @@ public class MainActivity extends Activity implements OnClickListener {
                                 curSelectedItemPos = position;
                                 //TODO 保存选中设置
                                 dialog.dismiss();
+                            }
+                        }, new CBDialogBuilder.OnConvertItemViewListener() {
+                            class ViewHolder {
+                                TextView txView;
+                            }
+
+                            @Override
+                            public View convertItemView(int position, View convertView, ViewGroup parent) {
+                                ViewHolder viewHolder = null;
+                                if (convertView == null) {
+                                    viewHolder = new ViewHolder();
+                                    convertView = LayoutInflater.from(MainActivity.this).inflate(
+                                            R.layout.custon_item_option_text, parent, false);
+                                    viewHolder.txView = (TextView) convertView
+                                            .findViewById(R.id.item_tx);
+                                    convertView.setTag(viewHolder);
+                                } else {
+                                    viewHolder = (ViewHolder) convertView.getTag();
+                                }
+                                viewHolder.txView.setTextColor(ContextCompat.getColor(MainActivity.this,
+                                        R.color.item_text_color));
+                                if (position == curSelectedItemPos) {
+                                    viewHolder.txView.setBackgroundResource(R.drawable.custom_option_item_tx_background);
+                                } else {
+                                    viewHolder.txView.setBackgroundResource(R.color.color_transparent);
+                                }
+                                switch (position) {
+                                    case 0:
+                                        viewHolder.txView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+                                        break;
+                                    case 1:
+                                        viewHolder.txView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
+                                        break;
+                                    case 2:
+                                        viewHolder.txView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 19);
+                                        break;
+                                    case 3:
+                                        viewHolder.txView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 21);
+                                        break;
+                                }
+                                viewHolder.txView.setText(itemOptions[position]);
+                                return convertView;
                             }
                         }, curSelectedItemPos)
                         .create().show();
@@ -194,10 +241,10 @@ public class MainActivity extends Activity implements OnClickListener {
                         .create().show();
                 break;
             case R.id.sweetAlert_dialog_success:
-                new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE,0.5f).show();
+                new SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE, 0.5f).show();
                 break;
             case R.id.sweetAlert_dialog_error:
-                new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE,0.7F).setCancelText("Quit").show();
+                new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE, 0.7F).setCancelText("Quit").show();
                 break;
             default:
                 break;

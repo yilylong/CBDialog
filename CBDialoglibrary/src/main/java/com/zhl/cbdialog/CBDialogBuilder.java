@@ -33,7 +33,7 @@ import com.zhl.cbdialog.titanic.TitanicTextView;
 /**
  * 类名称：对话框工具类 类描述：创建对话框的工具类，可以设置不同样式，和动画风格
  * <p>
- * 创建人： ZhaoHaiLong 创建时间：2012-1-20 上午10:37:55
+ * 创建人： zhl 创建时间：2012-1-20 上午10:37:55
  */
 public class CBDialogBuilder {
     public static final int INDICATOR_BallPulse = 0;
@@ -198,6 +198,7 @@ public class CBDialogBuilder {
      */
     private int outOfTime = 10;
     private onProgressOutTimeListener mProgressOutTimeListener;
+    private OnConvertItemViewListener convertItemViewListener;
     private TextView dialogTitle, dialogMsg;
     // 弹出dialog时候是否要显示阴影
     private static boolean dimEnable = true;
@@ -780,9 +781,12 @@ public class CBDialogBuilder {
 
     public CBDialogBuilder setItems(String[] items,
                                     final onDialogItemClickListener listener) {
-        return setItems(items, listener, -1);
+        return setItems(items, listener,null, -1);
     }
-
+    public CBDialogBuilder setItems(String[] items,
+                                    final onDialogItemClickListener listener,int selectedPos) {
+        return setItems(items, listener,null, selectedPos);
+    }
     /**
      * 给对话框设置一个数组列表
      *
@@ -792,7 +796,7 @@ public class CBDialogBuilder {
      * @return
      */
     public CBDialogBuilder setItems(String[] items,
-                                    final onDialogItemClickListener listener, int curSelectedPos) {
+                                    final onDialogItemClickListener listener,final OnConvertItemViewListener convertItemViewListener,int curSelectedPos) {
         if (DIALOG_STYLE_CURRENT != DIALOG_STYLE_NORMAL) {
             return this;
         }
@@ -802,8 +806,7 @@ public class CBDialogBuilder {
         // 给listview 设置数据
         ListView listview = getView(android.R.id.list);
 
-        // ArrayAdapter<String> adapter = new ArrayAdapter<String>(context,
-        // R.layout.item_option_text, items);
+        this.convertItemViewListener = convertItemViewListener;
         final DialogItemAdapter adapter = new DialogItemAdapter(items,
                 curSelectedPos);
         listview.setAdapter(adapter);
@@ -837,7 +840,7 @@ public class CBDialogBuilder {
     public CBDialogBuilder setItems(int resId,
                                     onDialogItemClickListener listener) {
         String[] items = context.getResources().getStringArray(resId);
-        return setItems(items, listener, -1);
+        return setItems(items, listener,null, -1);
     }
 
     /**
@@ -851,7 +854,20 @@ public class CBDialogBuilder {
     public CBDialogBuilder setItems(int resId,
                                     onDialogItemClickListener listener, int selectedPos) {
         String[] items = context.getResources().getStringArray(resId);
-        return setItems(items, listener, selectedPos);
+        return setItems(items, listener,null,selectedPos);
+    }
+    /**
+     * 传入一个数组资源ID
+     *
+     * @param resId
+     * @param listener
+     * @param selectedPos 当前选中项
+     * @return
+     */
+    public CBDialogBuilder setItems(int resId,
+                                    onDialogItemClickListener listener,final OnConvertItemViewListener convertItemViewListener, int selectedPos) {
+        String[] items = context.getResources().getStringArray(resId);
+        return setItems(items, listener,convertItemViewListener, selectedPos);
     }
 
     /**
@@ -1102,10 +1118,9 @@ public class CBDialogBuilder {
         return this;
     }
 
-    // 内部接口监听器
 
     /**
-     * 自定义监听器监听对话框按钮点击
+     * 监听器监听对话框按钮点击
      *
      * @author zhl
      */
@@ -1129,9 +1144,9 @@ public class CBDialogBuilder {
     }
 
     /**
-     * 自定义监听器监听对话框中的选项点击
+     * 监听器监听对话框中的选项点击
      *
-     * @author yan
+     * @author zhl
      */
     public interface onDialogItemClickListener {
 
@@ -1146,11 +1161,28 @@ public class CBDialogBuilder {
                                       int position);
 
     }
+    /**
+     *  the convert view listerner which used in setItems to custom itemview
+     *
+     * @author zhl
+     */
+    public interface OnConvertItemViewListener {
+        /**
+         * convert the item view when you want custom itemview
+         * @param position
+         * @param convertView
+         * @param parent
+         */
+        public View convertItemView(int position, View convertView, ViewGroup parent);
+
+    }
+
+
 
     /**
      * 进度框超时监听
      *
-     * @author long
+     * @author zhl
      */
     public interface onProgressOutTimeListener {
 
@@ -1193,7 +1225,7 @@ public class CBDialogBuilder {
     /**
      * dialog列表选项的适配器
      *
-     * @author long
+     * @author zhl
      */
     public class DialogItemAdapter extends BaseAdapter {
         private String[] dataArrays;
@@ -1225,32 +1257,36 @@ public class CBDialogBuilder {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            ViewHolder viewHolder = null;
-            if (convertView == null) {
-                viewHolder = new ViewHolder();
-                convertView = LayoutInflater.from(context).inflate(
-                        R.layout.cb_item_option_text, parent, false);
-                viewHolder.txView = (TextView) convertView
-                        .findViewById(R.id.item_tx);
-                convertView.setTag(viewHolder);
-            } else {
-                viewHolder = (ViewHolder) convertView.getTag();
-            }
+            if(convertItemViewListener!=null){
+                return convertItemViewListener.convertItemView(position,convertView,parent);
+            }else{
+                ViewHolder viewHolder = null;
+                if (convertView == null) {
+                    viewHolder = new ViewHolder();
+                    convertView = LayoutInflater.from(context).inflate(
+                            R.layout.cb_item_option_text, parent, false);
+                    viewHolder.txView = (TextView) convertView
+                            .findViewById(R.id.item_tx);
+                    convertView.setTag(viewHolder);
+                } else {
+                    viewHolder = (ViewHolder) convertView.getTag();
+                }
 
-            viewHolder.txView.setTextColor(context.getResources().getColor(
-                    R.color.item_text_color));
+                viewHolder.txView.setTextColor(context.getResources().getColor(
+                        R.color.item_text_color));
 
-            if (position == selectedPos) {
+                if (position == selectedPos) {
 //				viewHolder.txView.setTextColor(context.getResources().getColor(
 //						R.color.item_text_color_pressed));
-                // 暂时选中不变色
-                viewHolder.txView
-                        .setBackgroundResource(R.drawable.item_tx_background);
-            } else {
-                viewHolder.txView.setBackgroundResource(R.color.color_transparent);
+                    // 暂时选中不变色
+                    viewHolder.txView
+                            .setBackgroundResource(R.drawable.item_tx_background);
+                } else {
+                    viewHolder.txView.setBackgroundResource(R.color.color_transparent);
+                }
+                viewHolder.txView.setText(dataArrays[position]);
+                return convertView;
             }
-            viewHolder.txView.setText(dataArrays[position]);
-            return convertView;
         }
 
     }
