@@ -210,10 +210,11 @@ public class CBDialogBuilder {
      * 进度条
      */
     private AVLoadingIndicatorView mAVIndicatorView;
+    private boolean progressTimeOutLimit = true;
     /**
      * 进度条颜色值数组 size =7
      */
-    private int [] progressColorResID;
+    private int [] progressColors;
 
     /**
      * 构造器一 创建一个基本dialog
@@ -445,28 +446,28 @@ public class CBDialogBuilder {
                 public void onTick(long millisUntilFinished) {
                     if (DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS) {
                         count++;
-                        if(progressColorResID!=null){
+                        if(progressColors!=null){
                             switch (count % 7) {
                                 case 0:
-                                    mProgressHelper.setBarColor(progressColorResID.length>=1?progressColorResID[0]:ContextCompat.getColor(context,R.color.blue_btn_bg_color));
+                                    mProgressHelper.setBarColor(progressColors.length>=1?progressColors[0]:ContextCompat.getColor(context,R.color.blue_btn_bg_color));
                                     break;
                                 case 1:
-                                    mProgressHelper.setBarColor(progressColorResID.length>=2?progressColorResID[1]:ContextCompat.getColor(context,R.color.material_deep_teal_50));
+                                    mProgressHelper.setBarColor(progressColors.length>=2?progressColors[1]:ContextCompat.getColor(context,R.color.material_deep_teal_50));
                                     break;
                                 case 2:
-                                    mProgressHelper.setBarColor(progressColorResID.length>=3?progressColorResID[2]:ContextCompat.getColor(context,R.color.success_stroke_color));
+                                    mProgressHelper.setBarColor(progressColors.length>=3?progressColors[2]:ContextCompat.getColor(context,R.color.success_stroke_color));
                                     break;
                                 case 3:
-                                    mProgressHelper.setBarColor(progressColorResID.length>=4?progressColorResID[3]:ContextCompat.getColor(context,R.color.material_deep_teal_20));
+                                    mProgressHelper.setBarColor(progressColors.length>=4?progressColors[3]:ContextCompat.getColor(context,R.color.material_deep_teal_20));
                                     break;
                                 case 4:
-                                    mProgressHelper.setBarColor(progressColorResID.length>=5?progressColorResID[4]:ContextCompat.getColor(context,R.color.material_blue_grey_80));
+                                    mProgressHelper.setBarColor(progressColors.length>=5?progressColors[4]:ContextCompat.getColor(context,R.color.material_blue_grey_80));
                                     break;
                                 case 5:
-                                    mProgressHelper.setBarColor(progressColorResID.length>=6?progressColorResID[5]:ContextCompat.getColor(context,R.color.warning_stroke_color));
+                                    mProgressHelper.setBarColor(progressColors.length>=6?progressColors[5]:ContextCompat.getColor(context,R.color.warning_stroke_color));
                                     break;
                                 case 6:
-                                    mProgressHelper.setBarColor(progressColorResID.length>=7?progressColorResID[6]:ContextCompat.getColor(context,R.color.success_stroke_color));
+                                    mProgressHelper.setBarColor(progressColors.length>=7?progressColors[6]:ContextCompat.getColor(context,R.color.success_stroke_color));
                                     break;
                             }
                         }else{
@@ -505,33 +506,37 @@ public class CBDialogBuilder {
                 public void onFinish() {
                     if (DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS) {
                         count = -1;
-                        if (mProgressHelper.getProgressWheel() != null) {
+                        if (mProgressHelper.getProgressWheel() != null&&progressTimeOutLimit) {
                             mProgressHelper.getProgressWheel().setVisibility(
                                     View.GONE);
                         }
-                        if(horizatonalLine!=null){
+                        if(horizatonalLine!=null&&progressTimeOutLimit){
                             horizatonalLine.setVisibility(View.VISIBLE);
                         }
-                    } else if (DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS_TITANIC) {
+                    } else if (DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS_TITANIC&&progressTimeOutLimit) {
                         titanic.cancel();
                         mTitanicTXview.setVisibility(View.GONE);
                         if(horizatonalLine!=null){
                             horizatonalLine.setVisibility(View.VISIBLE);
                         }
                     } else {
-                        mAVIndicatorView.setVisibility(View.GONE);
+                        if(progressTimeOutLimit){
+                            mAVIndicatorView.setVisibility(View.GONE);
+                        }
                     }
                     FrameLayout erroricon = getView(R.id.error_frame);
-                    if (erroricon != null) {
+                    if (erroricon != null&&progressTimeOutLimit) {
                         erroricon.setVisibility(View.VISIBLE);
                     }
-                    if (confrimBtn != null) {
+                    if (confrimBtn != null&&progressTimeOutLimit) {
                         confrimBtn.setVisibility(View.VISIBLE);
                     }
                     if (dialogMsg == null) {
                         dialogMsg = getView(R.id.dialog_message);
                     } else {
-                        dialogMsg.setText(R.string.progress_dialog_outtime_msg);
+                        if(progressTimeOutLimit){
+                            dialogMsg.setText(R.string.progress_dialog_outtime_msg);
+                        }
                     }
                     if (mProgressOutTimeListener != null) {
                         mProgressOutTimeListener.onProgressOutTime(dialog,
@@ -556,11 +561,11 @@ public class CBDialogBuilder {
 
     /**
      * 设置进度条颜色数组
-     * @param colorResID
+     * @param colors
      * @return
      */
-    public CBDialogBuilder setProgressStyleColorResID(int[]colorResID) {
-        this.progressColorResID = colorResID;
+    public CBDialogBuilder setProgressStyleColorRes(int[]colors) {
+        this.progressColors = colors;
         return this;
     }
 
@@ -1219,6 +1224,16 @@ public class CBDialogBuilder {
             cancelBtnBG = resID;
             cancelBtn.setBackgroundResource(resID);
         }
+        return this;
+    }
+
+    /**
+     * set progress style dialog has timeout limit
+     * @param TimeOutLimit
+     * @return
+     */
+    public CBDialogBuilder setProgressTimeOutLimit(boolean TimeOutLimit){
+        this.progressTimeOutLimit = TimeOutLimit;
         return this;
     }
 

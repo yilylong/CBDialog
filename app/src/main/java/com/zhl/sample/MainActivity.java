@@ -178,9 +178,11 @@ public class MainActivity extends Activity implements OnClickListener {
                         .setOnProgressOutTimeListener(1, new CBDialogBuilder.onProgressOutTimeListener() {
                             @Override
                             public void onProgressOutTime(Dialog dialog, TextView dialogMsgTextView) {
-                                dialogMsgTextView.setText("出错啦");
+//                                dialogMsgTextView.setText("出错啦");
                             }
                         })
+                        .setProgressTimeOutLimit(false)
+//                        .setProgressStyleColorRes(new int[]{0xFF37474F,0xFF263238,0xFF21272B,0xFF80CBC4,0xFF009688,0xFFDE6262,0xFF0F519F})
                         .create().show();
                 break;
             case R.id.btn_show_normal_dialog_progress_titanic:
