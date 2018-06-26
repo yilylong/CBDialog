@@ -124,7 +124,7 @@ code
 
 更多配置方法参考DEMO
 
-感谢
+感谢 
 ==
 [sweet-alert-dialog](https://github.com/pedant/sweet-alert-dialog)<br/>
 [Titanic](https://github.com/RomainPiel/Titanic)的进度框动画样式<br/>
