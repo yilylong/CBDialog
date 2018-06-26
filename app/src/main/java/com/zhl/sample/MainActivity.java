@@ -221,7 +221,13 @@ public class MainActivity extends Activity implements OnClickListener {
             case R.id.custom_dialog_layout:
                 new CBDialogBuilder(this, R.layout.layout_custom_dialog_layout, 1.0f)
                         .setTouchOutSideCancelable(true)
-                        .showCancelButton(false)
+                        .showCancelButton(true)
+                        .setButtonClickListener(true,new CBDialogBuilder.onDialogbtnClickListener(){
+                            @Override
+                            public void onDialogbtnClick(Context context, Dialog dialog, int whichBtn) {
+                                Toast.makeText(context, "点击了按钮", Toast.LENGTH_SHORT).show();
+                            }
+                        })
                         .setDialoglocation(CBDialogBuilder.DIALOG_LOCATION_BOTTOM)
                         .setTitle("这是一个自定义dialog布局样式的对话框")
                         .setMessage("去除了dialog的圆角背景")

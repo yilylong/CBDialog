@@ -399,20 +399,26 @@ public class CBDialogBuilder {
             horizatonalLine =getView(R.id.dialog_btn_line_horizontal);
         }
         // 判断是否需要创建取消按钮
-        if(DIALOG_STYLE_CURRENT == DIALOG_STYLE_NORMAL){
-            if(showCancelButton){
-                cancelBtn.setVisibility(View.VISIBLE);
-                verticleLine.setVisibility(View.VISIBLE);
-                confrimBtn.setBackgroundResource(confirmBtnBG>0?confirmBtnBG:R.drawable.cb_button_background_right);
-            }else{
+        if(DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS||DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS_TITANIC||DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS_AVLOADING){
+            if(confrimBtn!=null){
                 confrimBtn.setBackgroundResource(confirmBtnBG>0?confirmBtnBG:R.drawable.cb_button_background);
             }
-        }else if(DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS){
-            confrimBtn.setBackgroundResource(confirmBtnBG>0?confirmBtnBG:R.drawable.cb_button_background);
-        }else if(DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS_TITANIC){
-            confrimBtn.setBackgroundResource(confirmBtnBG>0?confirmBtnBG:R.drawable.cb_button_background);
-        }else if(DIALOG_STYLE_CURRENT == DIALOG_STYLE_PROGRESS_AVLOADING){
-            confrimBtn.setBackgroundResource(confirmBtnBG>0?confirmBtnBG:R.drawable.cb_button_background);
+        }else{
+            if(showCancelButton){
+                if(cancelBtn!=null){
+                    cancelBtn.setVisibility(View.VISIBLE);
+                }
+                if(verticleLine!=null){
+                    verticleLine.setVisibility(View.VISIBLE);
+                }
+                if(confrimBtn!=null&&cancelBtn!=null){
+                    confrimBtn.setBackgroundResource(confirmBtnBG>0?confirmBtnBG:R.drawable.cb_button_background_right);
+                }
+            }else{
+                if(confrimBtn!=null){
+                    confrimBtn.setBackgroundResource(confirmBtnBG>0?confirmBtnBG:R.drawable.cb_button_background);
+                }
+            }
         }
 
         if (confrimBtn != null) {
@@ -696,42 +702,47 @@ public class CBDialogBuilder {
      */
     public CBDialogBuilder setButtonClickListener(final boolean isDissmiss,
                                                   final onDialogbtnClickListener btnClickListener) {
-        if (DIALOG_STYLE_CURRENT != DIALOG_STYLE_NORMAL) {
-            return this;
-        }
+//        if (DIALOG_STYLE_CURRENT != DIALOG_STYLE_NORMAL) {
+//            return this;
+//        }
         this.btnClickListener = btnClickListener;
         // 设置确认按钮
         final Button btnConfirm = getView(R.id.dialog_posi_btn);
 
         // 给按钮绑定监听器
-        btnConfirm.setOnClickListener(new OnClickListener() {
+        if(btnConfirm!=null){
 
-            @Override
-            public void onClick(View v) {
-                if (isDissmiss) {
-                    dialog.dismiss();
+            btnConfirm.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    if (isDissmiss) {
+                        dialog.dismiss();
+                    }
+                    if (btnClickListener != null) {
+                        btnClickListener.onDialogbtnClick(context, dialog,
+                                onDialogbtnClickListener.BUTTON_CONFIRM);
+                    }
                 }
-                if (btnClickListener != null) {
-                    btnClickListener.onDialogbtnClick(context, dialog,
-                            onDialogbtnClickListener.BUTTON_CONFIRM);
-                }
-            }
-        });
+            });
+        }
 
         // 设置消极按钮
         final Button btnCancel = getView(R.id.dialog_neg_btn);
-        btnCancel.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isDissmiss) {
-                    dialog.dismiss();
+        if(btnCancel!=null){
+            btnCancel.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (isDissmiss) {
+                        dialog.dismiss();
+                    }
+                    if (btnClickListener != null) {
+                        btnClickListener.onDialogbtnClick(context, dialog,
+                                onDialogbtnClickListener.BUTTON_CANCEL);
+                    }
                 }
-                if (btnClickListener != null) {
-                    btnClickListener.onDialogbtnClick(context, dialog,
-                            onDialogbtnClickListener.BUTTON_CANCEL);
-                }
-            }
-        });
+            });
+        }
         return this;
     }
 
