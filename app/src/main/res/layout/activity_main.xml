@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
-            android:text="设置按钮背景和文子颜色" />
+            android:text="设置按钮背景和文字颜色" />
 
         <Button
             android:id="@+id/btn_singlebtn"
