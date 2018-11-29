@@ -41,6 +41,8 @@
         style="@style/dialog_title_style"
         android:layout_gravity="center"
         android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="@string/title_default"
