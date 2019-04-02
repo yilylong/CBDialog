@@ -1,3 +1,4 @@
+<a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu"></a>
 [![](https://jitpack.io/v/yilylong/CBDialog.svg)](https://jitpack.io/#yilylong/CBDialog)
 # CBDialog
 一个快速创建对话框的工具类库
