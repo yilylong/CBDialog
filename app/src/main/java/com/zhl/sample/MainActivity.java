@@ -6,7 +6,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +16,8 @@ import android.widget.Toast;
 
 import com.zhl.cbdialog.CBDialogBuilder;
 import com.zhl.cbdialog.pedant.SweetAlert.SweetAlertDialog;
+
+import androidx.core.content.ContextCompat;
 
 public class MainActivity extends Activity implements OnClickListener {
     private int curSelectedItemPos = 2;
