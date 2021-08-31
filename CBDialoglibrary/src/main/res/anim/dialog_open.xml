@@ -3,7 +3,7 @@
     android:shareInterpolator="true" >
 
     <scale
-        android:duration="@android:integer/config_mediumAnimTime"
+        android:duration="@integer/anim_duration_short"
         android:fromXScale="0"
         android:fromYScale="0"
         android:interpolator="@android:anim/decelerate_interpolator"
@@ -13,7 +13,7 @@
         android:toYScale="1" />
 
     <alpha
-        android:duration="@android:integer/config_mediumAnimTime"
+        android:duration="@integer/anim_duration_short"
         android:fromAlpha="0"
         android:toAlpha="1" />
 
